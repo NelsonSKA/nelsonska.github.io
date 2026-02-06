@@ -4,41 +4,322 @@
   <meta charset="UTF-8">
   <title>Nelson Scarinci - Game Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Devicon Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; background:#0f172a; color:#e2e8f0; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background:#0f172a;
+      color:#e2e8f0;
+    }
+
     h1, h2 { color:#38bdf8; }
-    .section { margin-bottom:40px; }
+
+    .section { margin-bottom:60px; }
+
+    /* HERO */
+    .hero { text-align:center; margin-bottom:60px; }
+
+    .hero h1 { font-size:2.8rem; margin-bottom:10px; }
+
+    .hero h2 {
+      font-weight:normal;
+      color:#94a3b8;
+      margin-bottom:25px;
+    }
+
+    .hero-buttons {
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .btn {
+      background:#38bdf8;
+      color:#0f172a;
+      padding:12px 22px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.2s ease;
+    }
+
+    .btn:hover { background:#0ea5e9; transform:translateY(-2px); }
+
+    .btn-outline {
+      background:transparent;
+      border:2px solid #38bdf8;
+      color:#38bdf8;
+    }
+
+    .btn-outline:hover {
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    /* PROJECT LAYOUT */
+    .project {
+      display:flex;
+      gap:40px;
+      align-items:flex-start;
+      padding:40px 0;
+      border-bottom:1px solid #1e293b;
+    }
+
+    .project:last-child { border-bottom:none; }
+
+    .project-text { flex:1; }
+    .project-text.full { flex:2; }
+
+    .project-text h3 {
+      margin-top:0;
+      color:#7dd3fc;
+    }
+
+    .project-media {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+    }
+
+    .project-media img {
+      width:75%;
+      max-width:380px;
+      border-radius:8px;
+      border:1px solid #1e293b;
+      opacity:0.9;
+    }
+
+    @media (max-width:900px) {
+      .project { flex-direction:column; }
+      .project-media img { width:100%; }
+    }
+
+    /* BADGES */
+    .tech-stack {
+      margin-top:15px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .badge {
+      background:#1e293b;
+      color:#7dd3fc;
+      padding:6px 12px;
+      border-radius:20px;
+      font-size:0.85rem;
+      border:1px solid #334155;
+    }
+
+    /* DIVIDER */
+    .section-divider {
+      height:1px;
+      background:linear-gradient(to right, transparent, #1e293b, transparent);
+      margin:60px 0;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));
+      gap:20px;
+      margin-top:20px;
+    }
+
+.main-skill {
+  background:#1e293b;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+  transition:0.2s ease;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;   /* centra horizontalmente */
+  justify-content:center;
+}
+
+
+.main-skill i {
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+    .main-skill span {
+      font-size:0.9rem;
+      color:#cbd5e1;
+    }
+
+    .main-skill:hover {
+      transform:translateY(-4px);
+      background:#273449;
+    }
+.skill-icon {
+  width:40px;
+  height:40px;
+  margin-bottom:10px;
+  display:block;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+}
+
+.skill-icon.unity {
+  transform: scale(3);
+}
+	  
+.main-skill i {
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+    .main-skill span {
+      font-size:0.9rem;
+      color:#cbd5e1;
+    }
+
+    .main-skill:hover {
+      transform:translateY(-4px);
+      background:#273449;
+    }
+
+	  .skill i {
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+    .skill span {
+      font-size:0.9rem;
+      color:#cbd5e1;
+    }
+
+    .skill:hover {
+      transform:translateY(-4px);
+      background:#273449;
+    }
+	  
+.main-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+	  
   </style>
 </head>
+
 <body>
 
+<div class="hero">
   <h1>Nelson Scarinci</h1>
-  <h2>Unity Game Developer | C# Programmer</h2>
+  <h2>Unity Game Developer | C# Gameplay & Multiplayer Programmer</h2>
 
-  <div class="section">
-    <h2>About Me</h2>
-    <p>Game Developer with 4+ years of professional experience in Unity and C#. Specialized in gameplay systems, multiplayer networking, audio integration (FMOD), and console porting.</p>
+  <div class="hero-buttons">
+    <a href="Nelson_Scarinci_CV.pdf" class="btn" target="_blank">Download CV</a>
+    <a href="https://www.linkedin.com/in/nelson-desarrollador/" class="btn" target="_blank">LinkedIn</a>
+  </div>
+</div>
+<div class="main-container">
+<div class="section">
+  <h2>About Me</h2>
+  <p>
+Game developer with 4+ years of experience in Unity and C#.
+  </p><p>
+Specialized in gameplay programming and systems development, including networking, audio integration with FMOD, and console porting.
+Experience in commercial and educational projects. I also teach university courses in game programming and virtual environments.
+  </p>
+</div>
+<div class="section">
+  <h2>Technical Skills</h2>
+
+  <div class="skills-grid">
+    <div class="main-skill"><img src="images/unity.svg" class="skill-icon unity" alt="Unity Logo"><span>Unity</span></div>  
+    <div class="main-skill"><i class="devicon-csharp-plain"></i><span>C#</span></div>
+  	<div class="main-skill"><i class="devicon-android-plain"></i><span>Android</span></div>
+	<div class="main-skill"><i class="devicon-git-plain"></i><span>Git</span></div>
+	<div class="main-skill"><i class="devicon-dotnetcore-plain"></i><span>.NET</span></div>
+    <div class="main-skill"><i class="devicon-unrealengine-original"></i><span>Unreal Engine</span></div>
+	  
+  </div>
+	<div class="skills-grid">
+		<div class="main-skill"><span>Multiplayer Networking (Mirror)</span></div>
+		<div class="main-skill"><span>FMOD Audio Integration</span></div>
+		<div class="main-skill"><span>Console Porting</span></div>
+		<div class="main-skill"><span>Tool Creation</span></div>
+		<div class="main-skill"><span>Optimization</span></div>
+		<div class="main-skill"><span>AR/VR</span></div>
+</div>
+<div class="section-divider"></div>
+
+<div class="section">
+  <h2>Professional Projects</h2>
+
+  <!-- PROJECT 1 -->
+  <div class="project">
+    <div class="project-text">
+      <h3>Cyborg Immortal – Action MMORPG (Mobile)</h3>
+      <p><strong>Role:</strong> Lead Gameplay & Systems Programmer</p>
+      <p>
+        Development of core gameplay systems including inventory, weapons, tutorials, and UI.
+        Implementation of multiplayer using Mirror Networking, backend services with Unity Gaming Services,
+        and audio integration using FMOD. Also developed internal web tools for AWS server management.
+      </p>
+
+      <div class="tech-stack">
+        <span class="badge">Unity</span>
+        <span class="badge">C#</span>
+        <span class="badge">Mirror</span>
+        <span class="badge">FMOD</span>
+        <span class="badge">UGS</span>
+        <span class="badge">AWS</span>
+        <span class="badge">Mobile</span>
+      </div>
+    </div>
+
+    <div class="project-media">
+      <img src="images/1.PNG" alt="Cyborg Immortal UI">
+      <img src="images/3 gif.gif" alt="Cyborg Immortal Gameplay">
+    </div>
   </div>
 
-  <div class="section">
-    <h2>Professional Projects</h2>
-    <p><strong>Cyborg Immortal</strong> – Action MMORPG (Mobile)<br>
-    Gameplay systems, multiplayer with Mirror, Unity Gaming Services, FMOD integration.</p>
+  <!-- PROJECT 2 -->
+  <div class="project">
+    <div class="project-text full">
+      <h3>Unannounced 2D Action Platformer – Console Port (NDA)</h3>
+      <p><strong>Role:</strong> Unity Developer – Porting & Optimization</p>
+      <p>
+        Adaptation of a PC 2D action platformer for PlayStation, Xbox, and Nintendo Switch.
+      </p>
+      <ul>
+        <li>Platform-specific systems (save data, trophies/achievements, activities, DLC)</li>
+        <li>Performance and memory optimization for console hardware</li>
+        <li>SDK integration and certification compliance</li>
+        <li>Platform-specific bug fixing and technical adjustments</li>
+      </ul>
+      <p><em>Additional details available under non-disclosure agreement.</em></p>
 
-    <p><strong>Unannounced 2D Action Platformer</strong> – Console Port (NDA)<br>
-    Porting and optimization for PlayStation, Xbox, and Nintendo Switch.</p>
+      <div class="tech-stack">
+        <span class="badge">Unity</span>
+        <span class="badge">C#</span>
+        <span class="badge">Console Porting</span>
+        <span class="badge">PlayStation</span>
+        <span class="badge">Xbox</span>
+        <span class="badge">Switch</span>
+        <span class="badge">Optimization</span>
+      </div>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>Technical Skills</h2>
-    <p>Unity, C#, Mirror Networking, FMOD, Console Porting, AWS, Android, AR/VR</p>
-  </div>
+</div>
 
-  <div class="section">
-    <h2>Contact</h2>
-    <p>Email: nelsonngs92@gmail.com<br>
-    LinkedIn: <a href="https://www.linkedin.com/in/nelson-desarrollador/" style="color:#38bdf8;">Profile</a></p>
-  </div>
 
+
+</div>
 </body>
 </html>
