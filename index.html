@@ -17,6 +17,9 @@
     }
 
     h1, h2 { color:#38bdf8; }
+	li{margin-bottom: 15px}
+	a{color:cyan}
+	  
 
     .section { margin-bottom:60px; }
 
@@ -84,7 +87,7 @@
       flex:1;
       display:flex;
       flex-direction:column;
-      gap:15px;
+      gap:30px;
     }
 
     .project-media img {
@@ -211,9 +214,7 @@
     padding: 20px;
 }
 
-li{margin-bottom: 15px}
-a{color:cadetblue}
-	  
+
   </style>
 </head>
 
@@ -224,7 +225,7 @@ a{color:cadetblue}
   <h2>SSR. Game Developer | Unity Game Developer</h2>
 
   <div class="hero-buttons">
-    <a href="Nelson_Scarinci_CV.pdf" class="btn" target="_blank">Download CV</a>
+    <a href="Nelson_Scarinci_CV.pdf" class="btn" target="_blank">Download Resume</a>
     <a href="https://www.linkedin.com/in/nelson-desarrollador/" class="btn" target="_blank">LinkedIn</a>
   </div>
 </div>
@@ -232,11 +233,9 @@ a{color:cadetblue}
 <div class="section">
   <h2>About Me</h2>
   <p>
-Game developer with 4+ years of experience in Unity and C#.
-  </p><p>
-Specialized in gameplay programming and systems development, including networking, audio integration with FMOD, and console porting.
-Experience in commercial and educational projects. I also teach university courses in game programming and virtual environments.
-  </p>
+Game developer with 4+ years of experience in <strong>Unity</strong> and <strong>C#</strong>. </p><p>
+Specialized in gameplay programming and systems development, including <strong>networking</strong>, audio integration with <strong>FMOD</strong>, and console <strong>porting</strong>.
+Experience in commercial and educational projects. I also teach university courses in game programming and virtual environments. </p>
 </div>
 <div class="section">
   <h2>Technical Skills</h2>
@@ -263,20 +262,20 @@ Experience in commercial and educational projects. I also teach university cours
 <div class="section">
   <h1>Professional Projects</h1>
 
-  <!-- PROJECT 1 -->
+  <!-- Cyborg Immortal -->
   <div class="project">
     <div class="project-text">
       <h2>Cyborg Immortal – Action MMORPG</h2>
-      <h4> Client <strong id="docs-internal-guid-c7d24b28-7fff-ecec-c6d8-482df5327ce8"> <a href="https://www.sb.games/">Santa Barbara Games</a></strong></h4>
-      <p>Engine: Unity</p>
-      <p>Platform: Andorid / iOS</p>
-      <p><strong>Role:</strong> Gameplay & Systems Programmer</p>
+		<p><strong>Gameplay & Systems Programmer</strong></p>
+      <p>Client: <strong id="docs-internal-guid-c7d24b28-7fff-ecec-c6d8-482df5327ce8"> <a target="_blank" href="https://www.sb.games/">Santa Barbara Games</a></strong> <br>
+      Platform: Andorid / iOS</p>
+      
 		<ul>
 			<li>Development of core gameplay systems including: Inventory, Weapons, Tutorials, UI</li>
 			<li>Implementation of multiplayer using Mirror Networking for massive concurrency players</li>
-			<li>Audio integration using FMOD</li>
-			<li>Develop internal web tools for AWS server management (Python)</li>
-			<li>Backend services with Unity Gaming Services</li>
+			<li>Audio integration using <strong>FMOD</strong></li>
+			<li>Develop internal web tools for <strong>AWS</strong> server management (Python)</li>
+			<li>Backend services with <strong>UGS</strong> (Unity Gaming Services)</li>
 		</ul>
 
       <div class="tech-stack">
@@ -285,30 +284,29 @@ Experience in commercial and educational projects. I also teach university cours
         <span class="badge">Mirror</span>
         <span class="badge">FMOD</span>
         <span class="badge">UGS</span>
+		<span class="badge">Mobile</span>
         <span class="badge">AWS</span>
-        <span class="badge">Mobile</span>
       </div>
     </div>
 
     <div class="project-media">
-      <img src="images/1.PNG" alt="Cyborg Immortal UI">
-      <img src="images/3 gif.gif" alt="Cyborg Immortal Gameplay">
+      <img src="images/CI-1.PNG" alt="Cyborg Immortal UI">
+      <img src="images/CI-2.gif" alt="Cyborg Immortal Gameplay">
     </div>
   </div>
 
-  <!-- PROJECT 2 -->
+  <!-- Faust -->
   <div class="project">
-    <div class="project-text full">
-      <h3> 2D Action Platformer (NDA) – Console Port</h3>
-      <p>Engine: Unity</p>
-      <p>Platforms: PC / XBox / Playstation 5 / Switch / Steam</p>
-      <p><strong>Role:</strong> Unity Developer – Porting & Optimization</p>
+    <div class="project-text">
+      <h2> Project &quot;FAUST&quot; (NDA) – 2D Action Platformer</h2>
+		      <p><strong>Porting to consoles - Optimizations - Unity Developer</strong></p>
+		<p>      Platforms: PC / XBox / Playstation 5 / Switch / Steam</p>
+
       <p>
-        Adaptation of a PC 2D action platformer for PlayStation, Xbox, and Nintendo Switch.
-      </p>
+        Adaptation of a PC 2D action platformer for<strong> PlayStation 5</strong>, <strong>Xbox</strong> <strong>Series</strong>, and <strong>Nintendo Switch</strong>. </p>
       <ul>
-        <li>Platform-specific systems (save data, trophies/achievements, activities, DLC)</li>
-        <li>Performance and memory optimization for console hardware</li>
+        <li>Platform-specific systems (<strong>save system</strong>, <strong>input system</strong>, <strong>trophies</strong>/<strong>achievements</strong>,<strong> DLC</strong>)</li>
+        <li><strong>Performance </strong>and memory optimization for console hardware</li>
         <li>SDK integration and certification compliance</li>
         <li>Platform-specific bug fixing and technical adjustments</li>
       </ul>
@@ -324,6 +322,75 @@ Experience in commercial and educational projects. I also teach university cours
         <span class="badge">Optimization</span>
       </div>
     </div>
+	      <div class="project-media">
+            <p>&nbsp;</p>
+            <p><img src="images/porting.png" alt="Porting"></p>
+      </div>
+  </div>
+	
+	 <!-- Molnlycke -->
+	  <div class="project">
+    <div class="project-text">
+      <h2> Molnlycke – AR App</h2>
+		      <p><strong>Developer</strong></p>
+		<p>      Platforms: Android / iOS</p>
+
+     <p>Develop an app to display augmented reality 3D models of a vending machine for medical supplies.</p>
+      <ul>
+		<li>Implementation of AR system (Vuforia)</li>
+		<li>3D models integration</li>
+        <li>User Interface</li>
+		<li>Added videoplayer for products use demostration</li>
+      </ul>
+
+      <div class="tech-stack">
+        <span class="badge">Unity</span>
+        <span class="badge">C#</span>
+		<span class="badge">AR</span>
+		<span class="badge">Vuforia</span>
+		<span class="badge">3D</span>
+		<span class="badge">UI</span>
+		<span class="badge">Mobile</span>
+		
+      </div>
+    </div>
+	      <div class="project-media">
+            <p><img src="images/ml2.gif" alt="ARapp"></p>
+      </div>
+  </div>
+	
+		 <!-- Game disease minigames -->
+	  <div class="project">
+    <div class="project-text">
+      <h2> Game Disease Minigames – Web Games</h2>
+        <p><strong>Developer</strong></p>
+		<p>Client: <strong> <a target="_blank" href="https://thegamedisease.com/">Game Disease</a></strong> <br>
+	<p>       Platforms: WebGL</p>
+	<p></p>
+
+     <p>Develop a series of mini-games for web format with leaderboard online</p>
+      <ul>
+		<li>Fast Prototype + Full develop</li>
+        <li>Using Firebase for leadeboard</li>
+		<li>Audio integration (sfx & music)</li>
+      </ul>
+		<p>Try it!: <strong> <a target="_blank" href="https://thegamedisease.com/mini-games/">Game Disease Web Minigames</a></strong> <br>
+
+      <div class="tech-stack">
+        <span class="badge">Unity</span>
+        <span class="badge">C#</span>
+		<span class="badge">Leaderbards</span>
+		<span class="badge">2D</span>
+		<span class="badge">UI</span>
+		<span class="badge">WebGL</span>
+		
+		  
+      </div>
+    </div>
+	      <div class="project-media">
+            <p><img src="images/TTM.gif" alt="ARapp"></p>
+            <p><img src="images/TS.gif" alt="ARapp"></p>
+      </div>
   </div>
 
 </div>
