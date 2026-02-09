@@ -9,19 +9,34 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background:#0f172a;
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;       background:#0f172a;
       color:#e2e8f0;
-    }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("images/asfalt-light.png");
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
 
     h1, h2 { color:#38bdf8; }
 	li{margin-bottom: 15px}
-	a{color:cyan}
+	a {
+  color:#38bdf8;
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:underline;
+}
 	  
 
-    .section { margin-bottom:60px; }
+    .section { margin-bottom:80px; }
 
     /* HERO */
     .hero { text-align:center; margin-bottom:60px; }
@@ -75,7 +90,8 @@
 
     .project:last-child { border-bottom:none; }
 
-    .project-text { flex:1; }
+    .project-text { flex:1;
+	  max-width: :600px;}
     .project-text.full { flex:2; }
 
     .project-text h3 {
@@ -88,6 +104,7 @@
       display:flex;
       flex-direction:column;
       gap:30px;
+	
     }
 
     .project-media img {
@@ -208,10 +225,17 @@
 	  
 .main-container {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+	  .project-video {
+  width:75%;
+  max-width:380px;
+  max-height:380px;
+  border-radius:8px;
+  opacity:0.9;
 }
 
 
@@ -220,6 +244,7 @@
 
 <body>
 
+	<div class="main-container">
 <div class="hero">
   <h1>Nelson Scarinci</h1>
   <h2>SSR. Game Developer | Unity Game Developer</h2>
@@ -229,7 +254,7 @@
     <a href="https://www.linkedin.com/in/nelson-desarrollador/" class="btn" target="_blank">LinkedIn</a>
   </div>
 </div>
-<div class="main-container">
+
 <div class="section">
   <h2>About Me</h2>
   <p>
@@ -289,9 +314,11 @@ Experience in commercial and educational projects. I also teach university cours
       </div>
     </div>
 
+	  
     <div class="project-media">
       <img src="images/CI-1.PNG" alt="Cyborg Immortal UI">
-      <img src="images/CI-2.gif" alt="Cyborg Immortal Gameplay">
+		<video autoplay loop muted playsinline class="project-video">
+  		<source src="images/CI-2.mp4" type="video/mp4"></video>
     </div>
   </div>
 
@@ -355,7 +382,8 @@ Experience in commercial and educational projects. I also teach university cours
       </div>
     </div>
 	      <div class="project-media">
-            <p><img src="images/ml2.gif" alt="ARapp"></p>
+            		<video autoplay loop muted playsinline class="project-video">
+  		<source src="images/ml2.mp4" type="video/mp4">
       </div>
   </div>
 	
@@ -388,8 +416,12 @@ Experience in commercial and educational projects. I also teach university cours
       </div>
     </div>
 	      <div class="project-media">
-            <p><img src="images/TTM.gif" alt="ARapp"></p>
-            <p><img src="images/TS.gif" alt="ARapp"></p>
+		<video autoplay loop muted playsinline class="project-video">
+  		<source src="images/TTM.mp4" type="video/mp4">
+			</video>
+		<video autoplay loop muted playsinline class="project-video">
+  		<source src="images/TS.mp4" type="video/mp4">
+			</video>
       </div>
   </div>
 
