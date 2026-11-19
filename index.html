@@ -83,6 +83,49 @@ body::after {
   width:5px;
 }
 
+.twinkling-stars {
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  position:fixed;
+  z-index:0;
+}
+
+.twinkle-star {
+  background:#fff;
+  border-radius:50%;
+  box-shadow:0 0 7px rgba(186,230,253,0.9);
+  height:3px;
+  opacity:0.25;
+  position:absolute;
+  width:3px;
+  animation:twinkle 4.8s ease-in-out infinite;
+}
+
+.twinkle-star:nth-child(1) { left:8%; top:21%; animation-delay:0.4s; }
+.twinkle-star:nth-child(2) { left:23%; top:68%; animation-delay:2.1s; animation-duration:6.2s; }
+.twinkle-star:nth-child(3) { left:36%; top:14%; animation-delay:1.4s; animation-duration:5.5s; }
+.twinkle-star:nth-child(4) { left:49%; top:43%; animation-delay:3.2s; animation-duration:7s; }
+.twinkle-star:nth-child(5) { left:58%; top:79%; animation-delay:0.9s; animation-duration:5.8s; }
+.twinkle-star:nth-child(6) { left:67%; top:25%; animation-delay:2.8s; animation-duration:6.5s; }
+.twinkle-star:nth-child(7) { left:76%; top:61%; animation-delay:1.8s; animation-duration:5.1s; }
+.twinkle-star:nth-child(8) { left:88%; top:17%; animation-delay:3.6s; animation-duration:6.8s; }
+.twinkle-star:nth-child(9) { left:94%; top:73%; animation-delay:1.1s; animation-duration:5.6s; }
+.twinkle-star:nth-child(10) { left:4%; top:48%; animation-delay:2.5s; animation-duration:6.1s; }
+.twinkle-star:nth-child(11) { left:16%; top:88%; animation-delay:0.7s; animation-duration:5.3s; }
+.twinkle-star:nth-child(12) { left:29%; top:38%; animation-delay:3.9s; animation-duration:7.2s; }
+.twinkle-star:nth-child(13) { left:43%; top:63%; animation-delay:1.7s; animation-duration:5.9s; }
+.twinkle-star:nth-child(14) { left:55%; top:7%; animation-delay:4.2s; animation-duration:6.4s; }
+.twinkle-star:nth-child(15) { left:71%; top:91%; animation-delay:2.2s; animation-duration:5.7s; }
+.twinkle-star:nth-child(16) { left:82%; top:39%; animation-delay:0.3s; animation-duration:6.9s; }
+.twinkle-star:nth-child(17) { left:98%; top:29%; animation-delay:3.1s; animation-duration:5.4s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity:0.18; transform:scale(0.8); }
+  45% { opacity:0.9; transform:scale(1.5); }
+  60% { opacity:0.35; transform:scale(1); }
+}
+
 .moving-star:nth-child(1) {
   left:12%;
   top:16%;
@@ -125,7 +168,8 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
   body::before,
   body::after,
-  .moving-stars {
+  .moving-stars,
+  .twinkling-stars {
     animation:none;
     opacity:0;
   }
@@ -1206,6 +1250,26 @@ a:hover {
   <span class="moving-star"></span>
 </div>
 
+  <div class="twinkling-stars" aria-hidden="true">
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+    <span class="twinkle-star"></span>
+  </div>
+
 	<div class="main-container">
   <div class="language-switcher" aria-label="Language selector">
     <button class="language-button active" type="button" data-language="en" aria-label="English" title="English">
@@ -1514,7 +1578,7 @@ a:hover {
         </div>
       </div>
       <div class="project-media">
-        <img class="software-thumbnail mrvending-media" src="images/mr vending/Mr vending mini.jpg" alt="Mr. Vending application thumbnail">
+        <img class="software-thumbnail mrvending-media" src="images/mr vending/Mrvendingmini.jpg" alt="Mr. Vending application thumbnail">
         <img class="mrvending-media" src="images/mr vending/Mr vending machine.png" alt="Coffee vending machine used by Mr. Vending">
         <img class="mrvending-media" src="images/mr vending/webapp.png" alt="Mr. Vending web application">
       </div>
@@ -1691,37 +1755,9 @@ a:hover {
 
       <div class="personal-interest-grid">
         <article class="interest-card small-interest-card">
-          <h2 data-i18n="coinCollectionTitle">Coin collecting</h2>
+          <h2 data-i18n="modeling3DTitle">3D Modeling</h2>
           <div class="small-interest-image">
-            <img src="images/Extras/coin.png" alt="Coin collection" data-i18n="coinCollectionAlt">
-          </div>
-        </article>
-
-        <article class="interest-card small-interest-card">
-          <h2 data-i18n="mountainHikingTitle">Mountain hiking</h2>
-          <div class="small-interest-image">
-            <img src="images/Extras/lanin.jpg" alt="Mountain hiking" data-i18n="mountainHikingAlt">
-          </div>
-        </article>
-
-        <article class="interest-card small-interest-card">
-          <h2 data-i18n="cinemaTitle">Cinema</h2>
-          <div class="small-interest-image">
-            <img src="images/Extras/JP.png" alt="Jurassic Park" data-i18n="cinemaImageAlt">
-          </div>
-        </article>
-
-        <article class="interest-card small-interest-card">
-          <h2 data-i18n="cyclingTitle">Cycling</h2>
-          <div class="small-interest-image">
-            <img src="images/Extras/Bici.jpg" alt="Cycling" data-i18n="cyclingImageAlt">
-          </div>
-        </article>
-
-        <article class="interest-card small-interest-card">
-          <h2 data-i18n="boatingTitle">Boating</h2>
-          <div class="small-interest-image">
-            <img src="images/Extras/boating.jpg" alt="Boating" data-i18n="boatingImageAlt">
+            <img src="images/Extras/modelado.png" alt="3D modeling" data-i18n="modeling3DImageAlt">
           </div>
         </article>
 
@@ -1733,6 +1769,27 @@ a:hover {
         </article>
 
         <article class="interest-card small-interest-card">
+          <h2 data-i18n="boatingTitle">Boating</h2>
+          <div class="small-interest-image">
+            <img src="images/Extras/boating.jpg" alt="Boating" data-i18n="boatingImageAlt">
+          </div>
+        </article>
+
+        <article class="interest-card small-interest-card">
+          <h2 data-i18n="cinemaTitle">Cinema</h2>
+          <div class="small-interest-image">
+            <img src="images/Extras/JP.png" alt="Jurassic Park" data-i18n="cinemaImageAlt">
+          </div>
+        </article>
+
+        <article class="interest-card small-interest-card">
+          <h2 data-i18n="coinCollectionTitle">Coin collecting</h2>
+          <div class="small-interest-image">
+            <img src="images/Extras/coin.png" alt="Coin collection" data-i18n="coinCollectionAlt">
+          </div>
+        </article>
+
+        <article class="interest-card small-interest-card">
           <h2 data-i18n="cybersecurityTitle">Cybersecurity</h2>
           <div class="small-interest-image">
             <img src="images/Extras/cybersec.jpg" alt="Cybersecurity" data-i18n="cybersecurityImageAlt">
@@ -1740,9 +1797,16 @@ a:hover {
         </article>
 
         <article class="interest-card small-interest-card">
-          <h2 data-i18n="modeling3DTitle">3D Modeling</h2>
+          <h2 data-i18n="cyclingTitle">Cycling</h2>
           <div class="small-interest-image">
-            <img src="images/Extras/modelado.png" alt="3D modeling" data-i18n="modeling3DImageAlt">
+            <img src="images/Extras/Bici.jpg" alt="Cycling" data-i18n="cyclingImageAlt">
+          </div>
+        </article>
+
+        <article class="interest-card small-interest-card">
+          <h2 data-i18n="mountainHikingTitle">Mountain hiking</h2>
+          <div class="small-interest-image">
+            <img src="images/Extras/lanin.jpg" alt="Mountain hiking" data-i18n="mountainHikingAlt">
           </div>
         </article>
       </div>
