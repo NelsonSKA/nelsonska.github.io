@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" name="Portfolio" content="Nelson Scarinci — Unity Game Developer. Gameplay, Networking, FMOD, Console Porting. Portfolio." />
+  <meta charset="UTF-8">
+  <meta id="meta-description" name="description" content="Nelson Scarinci — Unity Game Developer. Gameplay, Networking, FMOD, Console Porting and Software Development. Portfolio.">
 
-  <title>Nelson Scarinci - Game Developer</title>
+  <title>Nelson Scarinci - Game &amp; Software Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Devicon Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <!-- Pixel-style display font with a monospace fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;       background:#0f172a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:#050816;
       color:#e2e8f0;
 }
 
@@ -19,10 +25,110 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("images/asfalt-light.png");
-  opacity: 0.3;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,0.9) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 72% 34%, rgba(125,211,252,0.8) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 38% 78%, rgba(255,255,255,0.75) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 90% 84%, rgba(186,230,253,0.8) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 54% 12%, rgba(255,255,255,0.7) 0 0.8px, transparent 1.3px),
+    radial-gradient(circle at 18% 66%, rgba(125,211,252,0.7) 0 0.8px, transparent 1.3px),
+    radial-gradient(circle at 84% 54%, rgba(255,255,255,0.65) 0 0.7px, transparent 1.2px),
+    radial-gradient(circle at 62% 92%, rgba(186,230,253,0.7) 0 0.8px, transparent 1.3px);
+  background-size:280px 240px, 360px 310px, 220px 270px, 430px 360px, 190px 210px, 310px 280px, 250px 330px, 390px 260px;
+  opacity:0.62;
   pointer-events: none;
   z-index: 0;
+  animation:starDrift 45s linear infinite;
+}
+
+body::after {
+  content:"";
+  position:fixed;
+  inset:-20%;
+  background:
+    radial-gradient(ellipse at 25% 28%, rgba(14,165,233,0.18), transparent 26%),
+    radial-gradient(ellipse at 78% 68%, rgba(124,58,237,0.16), transparent 30%),
+    radial-gradient(ellipse at 48% 88%, rgba(8,145,178,0.1), transparent 24%);
+  pointer-events:none;
+  z-index:0;
+  filter:blur(18px);
+  animation:nebulaFloat 24s ease-in-out infinite alternate;
+}
+
+@keyframes starDrift {
+  from { background-position:0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; }
+  to { background-position:80px 45px, -65px 55px, 45px -70px, -90px -35px, 50px -40px, -55px 60px, 70px 35px, -80px -50px; }
+}
+
+@keyframes nebulaFloat {
+  from { transform:translate3d(-2%, -1%, 0) scale(1); }
+  to { transform:translate3d(2%, 1%, 0) scale(1.08); }
+}
+
+.moving-stars {
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  position:fixed;
+  z-index:0;
+}
+
+.moving-star {
+  background:#fff;
+  border-radius:50%;
+  box-shadow:0 0 8px rgba(125,211,252,0.95);
+  height:5px;
+  opacity:0;
+  position:absolute;
+  width:5px;
+}
+
+.moving-star:nth-child(1) {
+  left:12%;
+  top:16%;
+  animation:movingStarOne 17s ease-in-out infinite;
+  animation-delay:2s;
+}
+
+.moving-star:nth-child(2) {
+  left:78%;
+  top:48%;
+  animation:movingStarTwo 23s ease-in-out infinite;
+  animation-delay:9s;
+}
+
+.moving-star:nth-child(3) {
+  left:42%;
+  top:82%;
+  animation:movingStarThree 29s ease-in-out infinite;
+  animation-delay:16s;
+}
+
+@keyframes movingStarOne {
+  0%, 78% { opacity:0; transform:translate3d(0, 0, 0); }
+  81% { opacity:0.9; }
+  88%, 100% { opacity:0; transform:translate3d(42vw, 28vh, 0); }
+}
+
+@keyframes movingStarTwo {
+  0%, 80% { opacity:0; transform:translate3d(0, 0, 0); }
+  83% { opacity:0.85; }
+  90%, 100% { opacity:0; transform:translate3d(-34vw, 30vh, 0); }
+}
+
+@keyframes movingStarThree {
+  0%, 82% { opacity:0; transform:translate3d(0, 0, 0); }
+  85% { opacity:0.8; }
+  92%, 100% { opacity:0; transform:translate3d(30vw, -38vh, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after,
+  .moving-stars {
+    animation:none;
+    opacity:0;
+  }
 }
 
     h1 { color:#38bdf8; margin-bottom: 0 }
@@ -96,7 +202,7 @@ a:hover {
     .project:last-child { border-bottom:none; }
 
     .project-text { flex:1;
-	  max-width: :600px;}
+	  max-width:600px;}
     .project-text.full { flex:2; }
 
     .project-text h3 {
@@ -118,6 +224,45 @@ a:hover {
       border-radius:8px;
       border:1px solid #1e293b;
       opacity:0.9;
+    }
+
+    .project-media .sacde-media {
+      width:100%;
+      max-width:330px;
+      align-self:center;
+    }
+
+    .project-media .erinland-media {
+      width:100%;
+      max-width:240px;
+      align-self:center;
+    }
+
+    .project-media .mrvending-media {
+      width:100%;
+      max-width:300px;
+      align-self:center;
+    }
+
+    .software-thumbnail.erinland-media {
+      background:#fff;
+      object-fit:contain;
+      padding:10px;
+    }
+
+    .sacde-hardware-pair {
+      display:flex;
+      gap:8px;
+      max-width:330px;
+      width:100%;
+      align-self:center;
+    }
+
+    .sacde-hardware-pair .sacde-media {
+      height:180px;
+      max-width:none;
+      object-fit:contain;
+      width:calc(50% - 4px);
     }
 
     @media (max-width:900px) {
@@ -292,54 +437,868 @@ a:hover {
   color: #64748b;
 }
 
+    /* PORTFOLIO TABS */
+    .portfolio-tabs {
+      display:grid;
+      gap:16px;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      margin:0 auto 22px;
+      max-width:1100px;
+    }
+
+    .portfolio-tab {
+      appearance:none;
+      background:linear-gradient(145deg, rgba(30,41,59,0.92), rgba(15,23,42,0.92));
+      border:1px solid #334155;
+      border-radius:14px;
+      color:#e2e8f0;
+      cursor:pointer;
+      font:inherit;
+      font-size:1rem;
+      min-height:155px;
+      padding:24px;
+      text-align:left;
+      transition:0.2s ease;
+      position:relative;
+    }
+
+    .portfolio-tab:hover,
+    .portfolio-tab:focus-visible {
+      border-color:#38bdf8;
+      box-shadow:0 10px 30px rgba(14,165,233,0.12);
+      transform:translateY(-3px);
+    }
+
+    .portfolio-tab.active {
+      background:linear-gradient(145deg, rgba(14,116,144,0.9), rgba(15,23,42,0.95));
+      border-color:#38bdf8;
+    }
+
+    .section-button-icon {
+      display:block;
+      font-size:2.3rem;
+      margin-bottom:12px;
+    }
+
+    .section-button-plus {
+      align-items:center;
+      border:1px solid #38bdf8;
+      border-radius:50%;
+      color:#38bdf8;
+      display:flex;
+      font-size:1.2rem;
+      height:28px;
+      justify-content:center;
+      position:absolute;
+      right:16px;
+      top:16px;
+      width:28px;
+    }
+
+    .section-button-title {
+      display:block;
+      font-size:1.35rem;
+      font-weight:bold;
+    }
+
+    .section-button-description {
+      color:#94a3b8;
+      display:block;
+      font-size:0.95rem;
+      font-weight:normal;
+      margin-top:5px;
+    }
+
+    .software-intro {
+      color:#94a3b8;
+      line-height:1.6;
+      margin:0 0 28px;
+      max-width:780px;
+    }
+
+    .portfolio-panel[hidden] {
+      display:none;
+    }
+
+    .portfolio-panel {
+      scroll-margin-top:20px;
+    }
+
+    .interests-intro {
+      color:#cbd5e1;
+      font-size:1.05rem;
+      line-height:1.7;
+      margin:0 0 28px;
+      max-width:780px;
+    }
+
+    .interests-grid {
+      display:grid;
+      gap:24px;
+      grid-template-columns:minmax(260px, 0.72fr) minmax(0, 1.28fr);
+      grid-template-rows:auto;
+      align-items:start;
+    }
+
+    .favorite-games-card {
+      align-self:start;
+      grid-row:span 2;
+      height:fit-content;
+    }
+
+    .personal-interest-grid {
+      align-content:flex-start;
+      align-items:flex-start;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      grid-column:2;
+      height:fit-content;
+    }
+
+    .interest-card {
+      background:linear-gradient(145deg, rgba(30,41,59,0.8), rgba(15,23,42,0.8));
+      border:1px solid #334155;
+      border-radius:14px;
+      padding:24px;
+    }
+
+    .interest-card h2 {
+      color:#e2e8f0;
+      font-size:1.25rem;
+      margin:0 0 16px;
+    }
+
+    .small-interest-card {
+      aspect-ratio:1;
+      box-sizing:border-box;
+      display:flex;
+      flex-direction:column;
+      min-height:0;
+      padding:12px;
+      width:150px;
+    }
+
+    .small-interest-card h2 {
+      font-size:0.95rem;
+      margin-bottom:8px;
+    }
+
+    .small-interest-image {
+      align-items:center;
+      background:#0f172a;
+      border:1px solid #334155;
+      border-radius:8px;
+      display:flex;
+      flex:1;
+      height:auto;
+      min-height:0;
+      justify-content:center;
+      overflow:hidden;
+      width:100%;
+    }
+
+    .small-interest-image img {
+      height:100%;
+      object-fit:cover;
+      width:100%;
+    }
+
+    .favorite-games {
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      list-style:none;
+      margin:0;
+      min-width:0;
+      padding:0;
+      width:100%;
+    }
+
+    .favorite-games li {
+      align-items:center;
+      background:#1e293b;
+      border:1px solid #334155;
+      border-radius:8px;
+      color:#7dd3fc;
+      display:block;
+      font-size:1.05rem;
+      min-height:42px;
+      padding:5px 9px;
+      width:100%;
+    }
+
+    .favorite-game-gifs {
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-top:4px;
+    }
+
+    .favorite-game-row {
+      align-items:center;
+      display:grid;
+      gap:14px;
+      grid-template-columns:62px minmax(0, 1fr);
+      min-height:62px;
+    }
+
+    .favorite-game-row img {
+      background:#0f172a;
+      border:1px solid #475569;
+      border-radius:7px;
+      display:block;
+      height:56px;
+      object-fit:contain;
+      opacity:1;
+      padding:3px;
+      visibility:visible;
+      width:56px;
+    }
+
+    .favorite-game-row span {
+      color:#7dd3fc;
+      font-family:"Pixelify Sans", "Courier New", monospace;
+      font-size:1.24rem;
+      line-height:1.2;
+    }
+
+    .favorite-games-layout {
+      display:block;
+    }
+
+    .coin-collection {
+      align-items:center;
+      display:flex;
+      gap:18px;
+      justify-content:space-between;
+    }
+
+    .coin-collection p {
+      color:#cbd5e1;
+      flex:1;
+      font-size:0.88rem;
+      line-height:1.4;
+      margin:0;
+    }
+
+    .coin-collection-text {
+      color:#cbd5e1;
+      font-size:0.88rem;
+      line-height:1.4;
+      margin:0;
+    }
+
+    .coin-collection img {
+      border:1px solid #334155;
+      border-radius:10px;
+      flex:0 0 auto;
+      max-width:72px;
+      margin-left:auto;
+      width:28%;
+    }
+
+    @media (max-width:700px) {
+      .interests-grid {
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+      }
+      .favorite-games-card { grid-row:auto; }
+      .personal-interest-grid {
+        flex-direction:column;
+        grid-column:auto;
+      }
+    }
+
+    @media (max-width:900px) {
+      .interests-grid {
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+      }
+      .favorite-games-card { grid-row:auto; }
+      .personal-interest-grid {
+        flex-direction:column;
+        grid-column:auto;
+      }
+    }
+
+    @media (max-width:520px) {
+      .personal-interest-grid { flex-direction:column; }
+      .small-interest-card { width:130px; }
+    }
+
+    /* GAME PROJECT ACCORDION */
+    .games-panel .project {
+      align-items:stretch;
+      display:block;
+      margin-bottom:24px;
+      padding:0;
+    }
+
+    .game-project-header {
+      align-items:center;
+      background:linear-gradient(145deg, rgba(30,41,59,0.92), rgba(15,23,42,0.92));
+      border:1px solid #334155;
+      border-radius:14px;
+      cursor:pointer;
+      display:grid;
+      gap:24px;
+      grid-template-columns:minmax(180px, 0.9fr) minmax(0, 1fr) auto;
+      padding:18px;
+      transition:0.2s ease;
+    }
+
+    .game-project-header:hover,
+    .game-project-header:focus-visible {
+      border-color:#38bdf8;
+      box-shadow:0 10px 30px rgba(14,165,233,0.12);
+    }
+
+    .game-project-summary h2,
+    .game-project-summary h3,
+    .game-project-summary p {
+      margin:0;
+    }
+
+    .game-project-summary h2 {
+      color:#e2e8f0;
+      font-size:1.45rem;
+    }
+
+    .game-project-summary h3 {
+      color:#38bdf8;
+      font-size:1rem;
+      margin-top:8px;
+    }
+
+    .game-project-summary p {
+      color:#94a3b8;
+      font-size:0.9rem;
+      font-style:italic;
+      margin-top:6px;
+    }
+
+    .game-project-toggle {
+      color:#38bdf8;
+      font-size:1.5rem;
+      font-weight:bold;
+    }
+
+    .games-panel .project-media {
+      align-items:center;
+      display:flex;
+      flex-direction:row;
+      gap:10px;
+      justify-content:center;
+      margin:0;
+      max-height:140px;
+      overflow:hidden;
+      width:100%;
+    }
+
+    .games-panel .project-media img,
+    .games-panel .project-media video {
+      border-radius:8px;
+      max-height:130px;
+      max-width:100%;
+      object-fit:cover;
+      object-position:left center;
+      width:auto;
+    }
+
+    .games-panel .project-media img.teaching-logo {
+      object-fit:cover;
+      object-position:left center;
+      width:100%;
+    }
+
+    .games-panel .project-media > * {
+      flex:1 1 0;
+      min-width:0;
+    }
+
+    .games-panel .project-text {
+      background:rgba(15,23,42,0.72);
+      border:1px solid transparent;
+      border-top:0;
+      border-radius:0 0 14px 14px;
+      display:block;
+      max-width:none;
+      max-height:0;
+      opacity:0;
+      overflow:hidden;
+      padding:0 24px;
+      pointer-events:none;
+      transition:max-height 0.55s ease, opacity 0.35s ease, padding 0.45s ease;
+    }
+
+    .games-panel .project.open .game-project-header {
+      border-bottom-left-radius:0;
+      border-bottom-right-radius:0;
+    }
+
+    .games-panel .project.open .project-media {
+      max-height:360px;
+    }
+
+    .games-panel .project.open .project-media img,
+    .games-panel .project.open .project-media video {
+      max-height:350px;
+    }
+
+    .games-panel .project.open .project-text {
+      max-height:5000px;
+      opacity:1;
+      border-color:#334155;
+      padding:30px 24px 24px;
+      pointer-events:auto;
+    }
+
+    .expanded-project-media {
+      display:flex;
+      justify-content:center;
+      margin:25px 0 5px;
+    }
+
+    .expanded-project-media img,
+    .expanded-project-media video {
+      border:1px solid #334155;
+      border-radius:10px;
+      max-height:360px;
+      max-width:100%;
+      object-fit:contain;
+    }
+
+    .sacde-gallery {
+      display:grid;
+      gap:12px;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      width:100%;
+    }
+
+    .sacde-gallery .sacde-media {
+      height:180px;
+      max-width:none;
+      object-fit:contain;
+      width:100%;
+    }
+
+    .teaching-thumbnail {
+      align-items:center;
+      background:linear-gradient(145deg, #1e3a5f, #0f172a);
+      border:1px solid #334155;
+      border-radius:10px;
+      color:#7dd3fc;
+      display:flex;
+      font-size:3rem;
+      height:120px;
+      justify-content:center;
+      width:100%;
+    }
+
+    .teaching-thumbnail.teaching-logo {
+      background:#111827;
+      object-fit:contain;
+      padding:18px;
+    }
+
+    .teaching-thumbnail.upc-logo {
+      background:#fff;
+    }
+
+    .teaching-expanded-image {
+      margin:24px 0 8px;
+      text-align:center;
+    }
+
+    .teaching-expanded-image img {
+      border:1px solid #334155;
+      border-radius:10px;
+      max-height:220px;
+      max-width:100%;
+      object-fit:contain;
+    }
+
+    .game-project-collapse {
+      background:transparent;
+      border:1px solid #334155;
+      border-radius:8px;
+      color:#38bdf8;
+      cursor:pointer;
+      display:block;
+      font:inherit;
+      font-size:1.2rem;
+      line-height:1;
+      margin:25px 0 0 auto;
+      padding:8px 12px;
+    }
+
+    .game-project-collapse:hover,
+    .game-project-collapse:focus-visible {
+      background:#1e293b;
+      border-color:#38bdf8;
+    }
+
+    @media (max-width:700px) {
+      .game-project-header {
+        gap:14px;
+        grid-template-columns:1fr auto;
+      }
+
+      .games-panel .project-media {
+        grid-column:1 / -1;
+        grid-row:1;
+      }
+
+      .game-project-summary {
+        grid-column:1 / -1;
+        grid-row:2;
+      }
+
+      .game-project-toggle {
+        grid-column:2;
+        grid-row:2;
+      }
+    }
+
+    .hero-shell {
+      min-height:auto;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      padding-top:24px;
+    }
+
+    .floating-home {
+      background:#38bdf8;
+      border:0;
+      border-radius:999px;
+      bottom:24px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.35);
+      color:#0f172a;
+      cursor:pointer;
+      font:inherit;
+      font-weight:bold;
+      padding:12px 18px;
+      position:fixed;
+      right:24px;
+      transition:0.2s ease;
+      z-index:10;
+    }
+
+    .floating-home:hover,
+    .floating-home:focus-visible {
+      background:#7dd3fc;
+      transform:translateY(-3px);
+    }
+
+    .language-switcher {
+      display:flex;
+      justify-content:flex-end;
+      gap:6px;
+      margin-bottom:18px;
+    }
+
+    .language-button {
+      background:transparent;
+      border:1px solid #334155;
+      border-radius:999px;
+      color:#94a3b8;
+      cursor:pointer;
+      font:inherit;
+      font-size:0.8rem;
+      padding:5px 10px;
+    }
+
+    .flag-icon {
+      border-radius:2px;
+      display:inline-block;
+      height:14px;
+      margin-right:5px;
+      overflow:hidden;
+      vertical-align:-2px;
+      width:22px;
+    }
+
+    .language-button.active,
+    .language-button:hover,
+    .language-button:focus-visible {
+      background:#1e293b;
+      color:#38bdf8;
+    }
+
+    .hero-home {
+      align-items:center;
+      display:grid;
+      gap:50px;
+      grid-template-columns:minmax(0, 1fr) minmax(260px, 420px);
+      margin-bottom:60px;
+      text-align:left;
+    }
+
+    .hero-visual {
+      align-items:center;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .hero-identity h1 {
+      font-size:clamp(2rem, 4vw, 3rem);
+      line-height:1;
+      margin:18px 0 6px;
+      text-align:center;
+    }
+
+    .hero-identity h2 {
+      color:#94a3b8;
+      font-size:1.05rem;
+      font-weight:normal;
+      margin:0;
+      text-align:center;
+    }
+
+    .hero-quick-links {
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      margin-top:14px;
+    }
+
+    .hero-icon-button {
+      align-items:center;
+      background:#1e293b;
+      border:1px solid #334155;
+      border-radius:7px;
+      color:#38bdf8;
+      display:flex;
+      height:34px;
+      justify-content:center;
+      text-decoration:none;
+      transition:0.2s ease;
+      width:34px;
+    }
+
+    .hero-icon-button:hover,
+    .hero-icon-button:focus-visible {
+      background:#273449;
+      border-color:#38bdf8;
+      transform:translateY(-2px);
+    }
+
+    .hero-icon-button svg {
+      fill:currentColor;
+      height:18px;
+      width:18px;
+    }
+
+    .hero-about-title {
+      color:#88CFEF;
+      font-size:1.55rem;
+      margin:0 0 12px;
+    }
+
+    .hero-copy p {
+      color:#cbd5e1;
+      font-size:1.1rem;
+      line-height:1.7;
+      max-width:650px;
+    }
+
+    .hero-copy .hero-overview {
+      font-size:1rem;
+      margin-top:14px;
+    }
+
+    .hero-inline-skills {
+      margin:22px 0 24px;
+    }
+
+    .hero-inline-skills h3 {
+      color:#88CFEF;
+      font-size:0.9rem;
+      margin:0 0 9px;
+    }
+
+    .hero-inline-skills-list {
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+
+    .hero-inline-skills-list .badge {
+      font-size:0.72rem;
+      padding:4px 8px;
+    }
+
+    .home-panel .section {
+      margin-bottom:35px;
+    }
+
+    .home-panel .skills-grid {
+      gap:12px;
+      grid-template-columns:repeat(auto-fit, minmax(90px, 1fr));
+      margin-top:14px;
+    }
+
+    .home-panel .main-skill {
+      padding:10px;
+    }
+
+    .home-panel .main-skill i {
+      font-size:28px;
+      margin-bottom:6px;
+    }
+
+    .home-panel .skill-icon {
+      height:30px;
+      margin-bottom:6px;
+      width:30px;
+    }
+
+    .home-panel .skill-icon.unity {
+      transform:scale(2);
+    }
+
+    .home-panel .tech-stack {
+      gap:7px;
+      margin-top:12px;
+    }
+
+    .home-panel .badge {
+      font-size:0.75rem;
+      padding:5px 9px;
+    }
+
+    .hero-photo {
+      border:1px solid #334155;
+      border-radius:50%;
+      box-shadow:0 20px 70px rgba(0,0,0,0.35);
+      display:block;
+      height:240px;
+      object-fit:cover;
+      object-position:center 18%;
+      width:240px;
+    }
+
+    @media (max-width:900px) {
+      .portfolio-tabs { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width:600px) {
+      .portfolio-tab { min-height:125px; padding:18px; }
+      .hero-shell { min-height:auto; padding-top:12px; }
+      .hero-home { grid-template-columns:1fr; text-align:center; }
+      .hero-copy p { margin-left:auto; margin-right:auto; }
+      .hero-photo { height:180px; margin:0 auto; order:-1; width:180px; }
+      .hero-identity h1 { font-size:2.2rem; }
+      .language-switcher { justify-content:center; }
+      .floating-home { bottom:16px; right:16px; }
+    }
+
   </style>
 </head>
 
-<body id"top">
+<body id="top">
+
+	<div class="moving-stars" aria-hidden="true">
+  <span class="moving-star"></span>
+  <span class="moving-star"></span>
+  <span class="moving-star"></span>
+</div>
 
 	<div class="main-container">
-<div class="hero">
-  <h1>Nelson Scarinci</h1>
-  <h2>SSR. Game Developer | Unity Game Developer</h2>
-
-  <div class="hero-buttons">
-    <a href="Nelson Scarinci - CV.pdf" class="btn" target="_blank">Download Resume</a>
-    <a href="https://www.linkedin.com/in/nelson-desarrollador/" class="btn" target="_blank">LinkedIn</a>
+  <div class="language-switcher" aria-label="Language selector">
+    <button class="language-button active" type="button" data-language="en" aria-label="English" title="English">
+      <svg class="flag-icon" viewBox="0 0 60 30" aria-hidden="true">
+        <rect width="60" height="30" fill="#012169"/>
+        <path d="M0 0 L60 30 M60 0 L0 30" stroke="#fff" stroke-width="8"/>
+        <path d="M0 0 L60 30 M60 0 L0 30" stroke="#c8102e" stroke-width="3"/>
+        <path d="M30 0 V30 M0 15 H60" stroke="#fff" stroke-width="10"/>
+        <path d="M30 0 V30 M0 15 H60" stroke="#c8102e" stroke-width="6"/>
+      </svg> EN
+    </button>
+    <button class="language-button" type="button" data-language="es" aria-label="Español" title="Español">
+      <svg class="flag-icon" viewBox="0 0 60 40" aria-hidden="true">
+        <rect width="60" height="40" fill="#aa151b"/>
+        <rect y="10" width="60" height="20" fill="#f1bf00"/>
+      </svg> ES
+    </button>
   </div>
-</div>
 
-<div class="section">
-  <h2>About Me</h2>
-  <p> I am a game developer with over 4 years of professional experience working with <strong>Unity</strong> and <strong>C#</strong>. <br>
-    Specialized in<strong> gameplay programming</strong> and <strong>systems development</strong>, including <strong>networking</strong>, <strong>audio integration</strong>, and <strong>console porting</strong>. </p>
-  <p>I've also held technical leadership roles, coordinating development teams and defining the architecture of key game systems and features. &nbsp;</p>
-<p>I have contributed to both commercial and <strong>educational projects</strong>, and I currently teach <strong>university-level </strong>courses in game programming and virtual environments. </p>
-  <p>Beyond development, I maintain a strong interest in game design and player experience, which I continue to explore through both professional work and personal projects.</p>
-</div>
-<div class="section">
-  <h2>Technical Skills</h2>
+  <div class="hero-shell" id="home">
+    <div class="hero-home">
+      <div class="hero-copy">
+        <h2 class="hero-about-title" data-i18n="aboutHeroTitle">About Me</h2>
+        <p data-i18n="heroDescription">I build interactive experiences, software systems and practical learning environments, combining technical development, problem-solving and a passion for teaching.</p>
+        <p class="hero-overview" data-i18n="heroOverview">I am a game developer with over 4 years of professional experience working with Unity and C#, specialized in gameplay programming and systems development, including networking, audio integration and console porting. I have also held technical leadership roles, contributed to commercial and educational projects, and currently teach university-level courses in game programming and virtual environments.</p>
+        <div class="hero-inline-skills">
+          <h3 data-i18n="technicalSkills">Technical Skills</h3>
+          <div class="hero-inline-skills-list">
+            <span class="badge">Unity</span>
+            <span class="badge">C#</span>
+            <span class="badge">Android</span>
+            <span class="badge">Git</span>
+            <span class="badge">.NET</span>
+            <span class="badge">Unreal Engine</span>
+            <span class="badge">Networking</span>
+            <span class="badge">FMOD</span>
+            <span class="badge">Console Porting</span>
+            <span class="badge">Tool Creation</span>
+            <span class="badge">Optimization</span>
+            <span class="badge">AR/VR</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-photo" src="images/NelsonScarinci.png" alt="Nelson Scarinci">
+        <div class="hero-identity">
+          <h1>Nelson Scarinci</h1>
+          <h2 data-i18n="heroRole">Game Developer · Software Developer · Educator</h2>
+          <div class="hero-quick-links">
+            <a class="hero-icon-button" href="https://www.linkedin.com/in/nelson-desarrollador/" target="_blank" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5H3V21h3.5V8.5ZM4.75 3A2.05 2.05 0 1 0 4.75 7.1 2.05 2.05 0 0 0 4.75 3ZM21 13.85c0-3.75-2-5.5-4.67-5.5-2.15 0-3.1 1.18-3.63 2v-1.85H9.2V21h3.5v-6.2c0-1.64.3-3.23 2.34-3.23 2 0 2.02 1.88 2.02 3.34V21H21v-7.15Z"/></svg>
+            </a>
+            <a class="hero-icon-button" href="Nelson Scarinci - CV.pdf" target="_blank" download aria-label="Download resume" title="Download resume">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l4 4v16H6V2Zm7 1.8V7h3.2L13 3.8ZM8 9h8v1.5H8V9Zm0 3h8v1.5H8V12Zm0 3h5v1.5H8V15Zm8 2.5h-3V16l-4 3 4 3v-1.5h3v-3Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-tabs" role="tablist" aria-label="Portfolio sections">
+      <button class="portfolio-tab" id="games-tab" type="button" role="tab" aria-selected="false" aria-controls="games-panel" data-panel="games-panel">
+        <span class="section-button-plus" aria-hidden="true">+</span>
+        <span class="section-button-icon">🎮</span>
+        <span class="section-button-title" data-i18n="games">Game Developer</span>
+        <span class="section-button-description" data-i18n="gamesDescription">Games, systems and interactive experiences</span>
+      </button>
+      <button class="portfolio-tab" id="software-tab" type="button" role="tab" aria-selected="false" aria-controls="software-panel" data-panel="software-panel">
+        <span class="section-button-plus" aria-hidden="true">+</span>
+        <span class="section-button-icon">💻</span>
+        <span class="section-button-title" data-i18n="software">Software Developer</span>
+        <span class="section-button-description" data-i18n="softwareDescription">Applications, tools and software systems</span>
+      </button>
+      <button class="portfolio-tab" id="teaching-tab" type="button" role="tab" aria-selected="false" aria-controls="teaching-panel" data-panel="teaching-panel">
+        <span class="section-button-plus" aria-hidden="true">+</span>
+        <span class="section-button-icon">📚</span>
+        <span class="section-button-title" data-i18n="teaching">Teaching</span>
+        <span class="section-button-description" data-i18n="teachingDescription">Courses, education and knowledge sharing</span>
+      </button>
+      <button class="portfolio-tab" id="about-tab" type="button" role="tab" aria-selected="false" aria-controls="about-panel" data-panel="about-panel">
+        <span class="section-button-plus" aria-hidden="true">+</span>
+        <span class="section-button-icon">👤</span>
+        <span class="section-button-title" data-i18n="about">About Me</span>
+        <span class="section-button-description" data-i18n="aboutDescription">Interests, hobbies and personal notes</span>
+      </button>
+    </div>
 
-  <div class="skills-grid">
-    <div class="main-skill"><img src="images/unity.svg" class="skill-icon unity" alt="Unity Logo"><span>Unity</span></div>  
-    <div class="main-skill"><i class="devicon-csharp-plain"></i><span>C#</span></div>
-  	<div class="main-skill"><i class="devicon-android-plain"></i><span>Android</span></div>
-	<div class="main-skill"><i class="devicon-git-plain"></i><span>Git</span></div>
-	<div class="main-skill"><i class="devicon-dotnetcore-plain"></i><span>.NET</span></div>
-    <div class="main-skill"><i class="devicon-unrealengine-original"></i><span>Unreal Engine</span></div>
-	  
   </div>
-	<div class="skills-grid">
-		<div class="main-skill"><span>Multiplayer Networking (Mirror)</span></div>
-		<div class="main-skill"><span>FMOD Audio Integration</span></div>
-		<div class="main-skill"><span>Console Porting</span></div>
-		<div class="main-skill"><span>Tool Creation</span></div>
-		<div class="main-skill"><span>Optimization</span></div>
-		<div class="main-skill"><span>AR/VR</span></div>
-</div>
-<div class="section-divider"></div>
 
-<div class="section">
-  <h1>Professional Projects</h1>
+  <div class="portfolio-panel home-panel" id="home-panel" role="tabpanel" aria-label="Home">
+  </div>
+
+  <div class="portfolio-panel games-panel" id="games-panel" role="tabpanel" aria-labelledby="games-tab">
+  <h1 data-i18n="gamesTitle">Game Developer</h1>
   <!-- Skinwalker -->
   <div class="project">
     <div class="project-text">
@@ -366,7 +1325,7 @@ a:hover {
 		
 		<hr class="project-divider">
 		Developer: <a target="_blank" href="https://sismogames.com/">Sismo Games</a><br>
-		Publiser: <a target="_blank" href="https://www.team17.com/news/announcing-skinwalker">Team17</a><br>
+		Publisher: <a target="_blank" href="https://www.team17.com/news/announcing-skinwalker">Team17</a><br>
         <a target="_blank" href="https://www.youtube.com/watch?v=4xG92utzJWA">View trailer ↗</a><br>
 	    <a target="_blank" href="https://store.steampowered.com/app/3086670/SKINWALKER_First_Blood">Steam Store Page ↗</a><br>
         Platforms: PC (Steam & WinStore) / XBox / Playstation 5 / Switch
@@ -410,7 +1369,7 @@ a:hover {
 		
 <hr class="project-divider">
       <p>Client: <a target="_blank" href="https://www.sb.games/">Santa Barbara Games</a><br>
-      Platforms: Andorid / iOS</p>
+      Platforms: Android / iOS</p>
     </div>
 
 	  
@@ -503,7 +1462,7 @@ a:hover {
       <div class="tech-stack">
         <span class="badge">Unity</span>
         <span class="badge">C#</span>
-		<span class="badge">Leaderbards</span>
+		<span class="badge">Leaderboards</span>
 		<span class="badge">2D</span>
 		<span class="badge">UI</span>
 		<span class="badge">WebGL</span>
@@ -524,12 +1483,276 @@ a:hover {
       </div>
   </div>
 
-</div>
 
+  </div>
 
+  <div class="portfolio-panel games-panel" id="software-panel" role="tabpanel" aria-labelledby="software-tab" hidden>
+    <h1 data-i18n="softwareTitle">Freelance Software Developer</h1>
+    <p class="software-intro" data-i18n="softwareIntro">Custom software solutions developed independently for clients across different industries, including web applications, Android systems, backend services and operational tools.</p>
+    <div class="project">
+      <div class="project-text">
+        <h1>Mr. Vending</h1>
+        <h5 class="project-subtitle">Freelance Web Application</h5>
+        <h2>Web Application Developer</h2>
+        <p>A web application that generates credit-loading keys for coffee vending machines and keeps a searchable history of every generation.</p>
+
+        <ul>
+          <li>Login with user roles</li>
+          <li>Code generation to enable machine recharging</li>
+          <li>Searchable history with filters by machine and date range</li>
+          <li>Backup and CSV export of generation records</li>
+          <li>Administration tools for creating users, changing passwords and activating accounts</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="badge">Web Application</span>
+          <span class="badge">Responsive UI</span>
+          <span class="badge">Authentication</span>
+          <span class="badge">Role-based Access</span>
+          <span class="badge">Data History</span>
+          <span class="badge">CSV Export</span>
+        </div>
+      </div>
+      <div class="project-media">
+        <img class="software-thumbnail mrvending-media" src="images/mr vending/Mr vending mini.jpg" alt="Mr. Vending application thumbnail">
+        <img class="mrvending-media" src="images/mr vending/Mr vending machine.png" alt="Coffee vending machine used by Mr. Vending">
+        <img class="mrvending-media" src="images/mr vending/webapp.png" alt="Mr. Vending web application">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-text full">
+        <h1>SACDE</h1>
+        <h5 class="project-subtitle">Modular software development for PC and mobile</h5>
+        <h2>Software Developer</h2>
+        <p>A modular software system developed to track truck movements between quarries and construction sites, as well as fuel distribution across fixed and mobile stations.</p>
+        <p>The solution combined desktop applications for different control points with Android applications used during material reception and mobile fuel delivery.</p>
+
+        <h3>Desktop modules</h3>
+        <ul>
+          <li>Vehicle registration with carrier, driver, truck and load capacity information.</li>
+          <li>Departure registration with QR scanning.</li>
+          <li>Weighing station registration with gross and net weight data.</li>
+          <li>Fixed-station fuel dispatch with printed tickets and QR-coded records.</li>
+          <li>Record search with filters and CSV export.</li>
+          <li>User and password management.</li>
+        </ul>
+
+        <h3>Android modules</h3>
+        <ul>
+          <li>Receiving registration at the quarry or weighing station using QR scanning and GPS location.</li>
+          <li>Mobile-station fuel dispatch registration with cloud backup.</li>
+          <li>Offline mode with synchronization of pending records after reconnecting.</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="badge">Desktop Applications</span>
+          <span class="badge">Android</span>
+          <span class="badge">QR Codes</span>
+          <span class="badge">GPS</span>
+          <span class="badge">Cloud Backup</span>
+          <span class="badge">Offline Sync</span>
+          <span class="badge">PHP</span>
+          <span class="badge">MariaDB / MySQL</span>
+          <span class="badge">Data Encryption</span>
+          <span class="badge">CSV Export</span>
+          <span class="badge">Logistics</span>
+        </div>
+
+        <hr class="project-divider">
+        <p data-i18n="sacdeScope"><strong>Client:</strong> SACDE<br>
+          <strong>Scope:</strong> Desktop and Android applications, hardware acquisition guidance and operational deployment.</p>
+      </div>
+      <div class="project-media">
+        <video class="software-thumbnail project-video" autoplay loop muted playsinline>
+          <source src="images/SACDE/VIDEO-INICIO_3.mp4" type="video/mp4">
+        </video>
+        <div class="sacde-gallery">
+          <img class="sacde-media" src="images/SACDE/printer.png" alt="SACDE ticket printer">
+          <img class="sacde-media" src="images/SACDE/QR reader.png" alt="Physical QR reader used in the SACDE system">
+          <img class="sacde-media" src="images/SACDE/Output-control.png" alt="SACDE desktop control module">
+          <img class="sacde-media" src="images/SACDE/Demo app.png" alt="SACDE Android demo application">
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-text">
+        <h1>Erinland</h1>
+        <h5 class="project-subtitle">Freelance Android Application &amp; Backend</h5>
+        <h2>Developer</h2>
+        <p>An Android application designed to register and manage fuel consumption and maintenance work performed on vehicles and machinery.</p>
+        <p>The system combines a mobile application with a cloud-based backend, database tables and PHP scripts for managing the recorded information.</p>
+
+        <ul>
+          <li>Authentication with user access control</li>
+          <li>GPS location capture to validate where each record was created</li>
+          <li>QR code scanning to identify vehicles and machinery</li>
+          <li>MySQL database structure and data management scripts</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="badge">Android</span>
+          <span class="badge">MySQL</span>
+          <span class="badge">PHP</span>
+          <span class="badge">GPS</span>
+          <span class="badge">QR Codes</span>
+          <span class="badge">Backend</span>
+        </div>
+
+        <hr class="project-divider">
+        <p data-i18n="erinlandDeployment"><strong>Deployment:</strong> Android APK with a cloud-based PHP/MySQL backend.</p>
+      </div>
+      <div class="project-media">
+        <img class="software-thumbnail erinland-media" src="images/Erinland/logo.png" alt="Erinland logo">
+        <img class="erinland-media" src="images/Erinland/main.png" alt="Erinland Android application">
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-panel games-panel" id="teaching-panel" role="tabpanel" aria-labelledby="teaching-tab" hidden>
+    <h1 data-i18n="teachingTitle">Teaching</h1>
+    <p class="software-intro" data-i18n="teachingIntro">University teaching experience focused on video game programming, Unity and C#.</p>
+
+    <div class="project">
+      <div class="project-text">
+        <h1>Universidad Provincial de Córdoba</h1>
+        <h5 class="project-subtitle">2025 - Present</h5>
+        <h2>Video Game Development Professor</h2>
+        <p>I teach programming for virtual environments as part of the University Technician degree in Video Game Development and Production.</p>
+        <ul>
+          <li>Courses: Programming in Virtual Environments I and II</li>
+          <li>Technologies: Unity and C#</li>
+          <li>Degree: University Technician in Video Game Development and Production</li>
+        </ul>
+        <div class="tech-stack">
+          <span class="badge">Teaching</span>
+          <span class="badge">Unity</span>
+          <span class="badge">C#</span>
+          <span class="badge">Virtual Environments</span>
+        </div>
+        <div class="teaching-expanded-image">
+          <img src="images/Teaching/Fachada-cda-7-de-8.jpg-1-1-scaled-1.jpeg" alt="Fachada de la Universidad Provincial de Córdoba">
+        </div>
+        <hr class="project-divider">
+        <p><strong>Institution:</strong> Universidad Provincial de Córdoba<br>
+          <a href="https://www.upc.edu.ar/carreras/tecnicatura-universitaria-en-desarrollo-y-produccion-de-videojuegos/" target="_blank" rel="noopener">Degree program ↗</a></p>
+      </div>
+      <div class="project-media">
+        <img class="teaching-thumbnail teaching-logo upc-logo" src="images/Teaching/logo-upc-2024.png" alt="Logo de la Universidad Provincial de Córdoba">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-text">
+        <h1>Universidad del Cine</h1>
+        <h5 class="project-subtitle">2025 - 2026</h5>
+        <h2>Video Game Development Professor</h2>
+        <p>I taught programming for video game development, combining C# and Unity with an introductory approach for students entering the field.</p>
+        <ul>
+          <li>Course: Programming in C# and Unity</li>
+          <li>Program: Introduction to Video Game Development</li>
+        </ul>
+        <div class="tech-stack">
+          <span class="badge">Teaching</span>
+          <span class="badge">Unity</span>
+          <span class="badge">C#</span>
+          <span class="badge">Game Development</span>
+        </div>
+        <div class="teaching-expanded-image">
+          <img src="images/Teaching/FUCLAB.png" alt="Logo de FUCLAB de la Universidad del Cine">
+        </div>
+        <hr class="project-divider">
+        <p><strong>Institution:</strong> Universidad del Cine</p>
+      </div>
+      <div class="project-media">
+        <img class="teaching-thumbnail teaching-logo" src="images/Teaching/UCINE.png" alt="Logo de la Universidad del Cine">
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-panel" id="about-panel" role="tabpanel" aria-labelledby="about-tab" hidden>
+    <h1 data-i18n="aboutTitle">Interests</h1>
+    <p class="interests-intro" data-i18n="aboutIntro">Besides developing video games, I enjoy spending time on other activities, such as cycling, going to the cinema and exploring different hobbies.</p>
+
+    <div class="interests-grid">
+      <article class="interest-card favorite-games-card">
+        <h2 data-i18n="favoriteGamesTitle">Favorite video games</h2>
+        <div class="favorite-games-layout">
+          <div class="favorite-game-gifs" aria-label="Favorite game animations">
+            <div class="favorite-game-row"><img src="images/Extras/aoe%202.gif" alt="Age of Empires II"><span data-i18n="favoriteGameAge">Age of Empires II</span></div>
+            <div class="favorite-game-row"><img src="images/Extras/Factorio.gif" alt="Factorio"><span data-i18n="favoriteGameFactorio">Factorio</span></div>
+            <div class="favorite-game-row"><img src="images/Extras/OW.gif" alt="Outer Wilds"><span data-i18n="favoriteGameOuterWilds">Outer Wilds</span></div>
+            <div class="favorite-game-row"><img src="images/Extras/inscryption.gif" alt="Inscryption"><span data-i18n="favoriteGameInscryption">Inscryption</span></div>
+            <div class="favorite-game-row"><img src="images/Extras/noita-mina.gif" alt="Noita"><span data-i18n="favoriteGameNoita">Noita</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="personal-interest-grid">
+        <article class="interest-card small-interest-card">
+          <h2 data-i18n="coinCollectionTitle">Coin collecting</h2>
+          <div class="small-interest-image">
+            <img src="images/Extras/coin.png" alt="Coin collection" data-i18n="coinCollectionAlt">
+          </div>
+        </article>
+
+        <article class="interest-card small-interest-card">
+          <h2 data-i18n="mountainHikingTitle">Mountain hiking</h2>
+          <div class="small-interest-image">
+            <img src="images/Extras/lanin.jpg" alt="Mountain hiking" data-i18n="mountainHikingAlt">
+          </div>
+        </article>
+
+        <article class="interest-card small-interest-card">
+          <h2 data-i18n="cinemaTitle">Cinema</h2>
+          <div class="small-interest-image">
+            <img src="images/Extras/JP.png" alt="Jurassic Park" data-i18n="cinemaImageAlt">
+          </div>
+        </article>
+
+        <article class="interest-card small-interest-card">
+          <h2 data-i18n="cyclingTitle">Cycling</h2>
+          <div class="small-interest-image">
+            <img src="images/Extras/Bici.jpg" alt="Cycling" data-i18n="cyclingImageAlt">
+          </div>
+        </article>
+
+        <article class="interest-card small-interest-card">
+          <h2 data-i18n="boatingTitle">Boating</h2>
+          <div class="small-interest-image">
+            <img src="images/Extras/boating.jpg" alt="Boating" data-i18n="boatingImageAlt">
+          </div>
+        </article>
+
+        <article class="interest-card small-interest-card">
+          <h2 data-i18n="audioIntegrationTitle">Audio integration</h2>
+          <div class="small-interest-image">
+            <img src="images/Extras/Audio integration.jpg" alt="Audio integration" data-i18n="audioIntegrationImageAlt">
+          </div>
+        </article>
+
+        <article class="interest-card small-interest-card">
+          <h2 data-i18n="cybersecurityTitle">Cybersecurity</h2>
+          <div class="small-interest-image">
+            <img src="images/Extras/cybersec.jpg" alt="Cybersecurity" data-i18n="cybersecurityImageAlt">
+          </div>
+        </article>
+
+        <article class="interest-card small-interest-card">
+          <h2 data-i18n="modeling3DTitle">3D Modeling</h2>
+          <div class="small-interest-image">
+            <img src="images/Extras/modelado.png" alt="3D modeling" data-i18n="modeling3DImageAlt">
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
 
 </div>
 	
+	<button class="floating-home" id="floating-home" type="button" data-i18n="home">Home</button>
+
 	<footer class="footer">
   <div class="footer-content">
     <div class="footer-left">
@@ -538,13 +1761,496 @@ a:hover {
     </div>
 
     <div class="footer-right">
-      <a href="#top">Back to top ↑</a>
+    <a href="#top" data-i18n="backTop">Back to top ↑</a>
     </div>
   </div>
 
   <div class="footer-bottom">
-   🏰 Nelson Scarinci — Game Developer 🏰
+   🏰 Nelson Scarinci — <span data-i18n="footerRole">Game &amp; Software Developer</span> 🏰
   </div>
 </footer>
+<script>
+  const portfolioTabs = document.querySelectorAll('.portfolio-tab');
+  const floatingHome = document.getElementById('floating-home');
+  const portfolioPanels = document.querySelectorAll('.portfolio-panel');
+  const languageButtons = document.querySelectorAll('.language-button');
+  const translations = {
+    en: {
+      pageTitle: 'Nelson Scarinci - Game & Software Developer',
+      metaDescription: 'Nelson Scarinci — Unity Game Developer. Gameplay, Networking, FMOD, Console Porting and Software Development. Portfolio.',
+      home: 'Home',
+      games: 'Game Developer',
+      gamesDescription: 'Games, systems and interactive experiences',
+      software: 'Software Developer',
+      softwareDescription: 'Applications, tools and software systems',
+      teaching: 'Teaching',
+      teachingDescription: 'Courses, education and knowledge sharing',
+      teachingIntro: 'University teaching experience focused on video game programming, Unity and C#.',
+      about: 'Interests',
+      aboutDescription: 'Hobbies, favorite games and personal notes',
+      backHome: '← Back to Home',
+      backTop: 'Back to top ↑',
+      footerRole: 'Game & Software Developer',
+      aboutHeroTitle: 'About Me',
+      technicalSkills: 'Technical Skills',
+      heroRole: 'Game Developer · Software Developer · Educator',
+      heroDescription: 'I build interactive experiences, software systems and practical learning environments, combining technical development, problem-solving and a passion for teaching.',
+      heroOverview: 'I am a game developer with over 4 years of professional experience working with Unity and C#, specialized in gameplay programming and systems development, including networking, audio integration and console porting. I have also held technical leadership roles, contributed to commercial and educational projects, and currently teach university-level courses in game programming and virtual environments.',
+      resume: 'Download Resume',
+      homeIntro: 'Choose the area you would like to explore.',
+      gamesTitle: 'Game Developer',
+      softwareTitle: 'Freelance Software Developer',
+      softwareIntro: 'Custom software solutions developed independently for clients across different industries, including web applications, Android systems, backend services and operational tools.',
+      teachingTitle: 'Teaching',
+      teachingPlaceholder: 'Teaching experience, courses and educational projects will be added here.',
+      aboutTitle: 'Interests',
+      aboutIntro: 'Here are some things I enjoy doing when I am not working.',
+      favoriteGamesTitle: 'Favorite video games',
+      favoriteGameAge: 'Age of Empires II',
+      favoriteGameFactorio: 'Factorio',
+      favoriteGameOuterWilds: 'Outer Wilds',
+      favoriteGameInscryption: 'Inscryption',
+      favoriteGameNoita: 'Noita',
+      noitaGifAlt: 'Noita gameplay',
+      coinCollectionTitle: 'Coin collecting',
+      coinCollectionText: 'Coins, banknotes and more than 500 pieces.',
+      coinCollectionAlt: 'Coin collection',
+      mountainHikingTitle: 'Mountain hiking',
+      mountainHikingText: 'Mountain hikes — Lanín, 2015.',
+      mountainHikingAlt: 'Ascent of Lanín in 2015',
+      cinemaTitle: 'Cinema',
+      cinemaText: 'I enjoy watching and discovering films.',
+      cinemaImageAlt: 'Jurassic Park',
+      cyclingTitle: 'Cycling',
+      cyclingText: 'I enjoy riding my bike.',
+      cyclingImageAlt: 'Cycling',
+      boatingTitle: 'Boating',
+      boatingText: 'I enjoy going out on the boat.',
+      boatingImageAlt: 'Boating',
+      audioIntegrationTitle: 'Audio integration',
+      audioIntegrationImageAlt: 'Audio integration',
+      cybersecurityTitle: 'Cybersecurity',
+      cybersecurityImageAlt: 'Cybersecurity',
+      modeling3DTitle: '3D Modeling',
+      modeling3DImageAlt: '3D modeling',
+      sacdeScope: '<strong>Client:</strong> SACDE<br><strong>Scope:</strong> Desktop and Android applications, hardware acquisition guidance and operational deployment.',
+      erinlandDeployment: '<strong>Deployment:</strong> Android APK with a cloud-based PHP/MySQL backend.'
+    },
+    es: {
+      pageTitle: 'Nelson Scarinci - Desarrollador de videojuegos y software',
+      metaDescription: 'Nelson Scarinci — Desarrollador de videojuegos con Unity. Gameplay, networking, FMOD, porting a consolas y desarrollo de software. Portfolio.',
+      home: 'Inicio',
+      games: 'Desarrollador de Videojuegos',
+      gamesDescription: 'Juegos, sistemas y experiencias interactivas',
+      software: 'Desarrollador de Software',
+      softwareDescription: 'Aplicaciones, herramientas y sistemas',
+      teaching: 'Docencia',
+      teachingDescription: 'Cursos, educación y divulgación',
+      teachingIntro: 'Experiencia docente universitaria enfocada en programación de videojuegos, Unity y C#.',
+      about: 'Intereses',
+      aboutDescription: 'Hobbies, videojuegos favoritos y notas personales',
+      backHome: '← Volver al inicio',
+      backTop: 'Volver arriba ↑',
+      footerRole: 'Desarrollador de videojuegos y software',
+      aboutHeroTitle: 'Sobre mí',
+      technicalSkills: 'Habilidades técnicas',
+      heroRole: 'Desarrollador de Videojuegos · Software · Docente',
+      heroDescription: 'Desarrollo experiencias interactivas, sistemas de software y entornos de aprendizaje, combinando desarrollo técnico, resolución de problemas y pasión por la enseñanza.',
+      heroOverview: 'Soy desarrollador de videojuegos con más de 4 años de experiencia profesional trabajando con Unity y C#, especializado en programación de gameplay y desarrollo de sistemas, incluyendo networking, integración de audio y porting a consolas. También ocupé roles de liderazgo técnico, participé en proyectos comerciales y educativos, y actualmente dicto cursos universitarios de programación de videojuegos y entornos virtuales.',
+      resume: 'Descargar CV',
+      homeIntro: 'Elegí el área que querés explorar.',
+      gamesTitle: 'Desarrollador de Videojuegos',
+      softwareTitle: 'Desarrollador de Software Freelance',
+      softwareIntro: 'Soluciones de software personalizadas desarrolladas de forma independiente para clientes de distintas industrias, incluyendo aplicaciones web, sistemas Android, servicios backend y herramientas operativas.',
+      teachingTitle: 'Docencia',
+      teachingPlaceholder: 'Aquí se agregarán la experiencia docente, los cursos y los proyectos educativos.',
+      aboutTitle: 'Intereses',
+      aboutIntro: 'Aquí hay algunas cosas de las que me gusta hacer cuando no estoy trabajando.',
+      favoriteGamesTitle: 'Videojuegos favoritos',
+      favoriteGameAge: 'Age of Empires II',
+      favoriteGameFactorio: 'Factorio',
+      favoriteGameOuterWilds: 'Outer Wilds',
+      favoriteGameInscryption: 'Inscryption',
+      favoriteGameNoita: 'Noita',
+      noitaGifAlt: 'Gameplay de Noita',
+      coinCollectionTitle: 'Colección de monedas',
+      coinCollectionText: 'Monedas, billetes y más de 500 piezas.',
+      coinCollectionAlt: 'Colección de monedas',
+      mountainHikingTitle: 'Caminatas por la montaña',
+      mountainHikingText: 'Caminatas por la montaña — Lanín, 2015.',
+      mountainHikingAlt: 'Ascenso al Lanín en 2015',
+      cinemaTitle: 'Cine',
+      cinemaText: 'Me gusta ver y descubrir películas.',
+      cinemaImageAlt: 'Jurassic Park',
+      cyclingTitle: 'Andar en bicicleta',
+      cyclingText: 'Me gusta andar en bicicleta.',
+      cyclingImageAlt: 'Andar en bicicleta',
+      boatingTitle: 'Andar en bote',
+      boatingText: 'Me gusta salir a andar en bote.',
+      boatingImageAlt: 'Andar en bote',
+      audioIntegrationTitle: 'Integración de audio',
+      audioIntegrationImageAlt: 'Integración de audio',
+      cybersecurityTitle: 'Ciberseguridad',
+      cybersecurityImageAlt: 'Ciberseguridad',
+      modeling3DTitle: 'Modelado 3D',
+      modeling3DImageAlt: 'Modelado 3D',
+      sacdeScope: '<strong>Cliente:</strong> SACDE<br><strong>Alcance:</strong> Aplicaciones de escritorio y Android, asesoramiento para adquisición de hardware y puesta en marcha operativa.',
+      erinlandDeployment: '<strong>Despliegue:</strong> APK Android con backend PHP/MySQL en la nube.'
+    }
+  };
+
+  const staticSpanishText = {
+    '2D Narrative-driven action game': 'Juego de acción narrativa 2D',
+    'Lead Unity Developer': 'Desarrollador principal de Unity',
+    'Action MMORPG': 'MMORPG de acción',
+    'Gameplay & Systems Programmer': 'Programador de gameplay y sistemas',
+    '2D Action Platformer': 'Plataformas de acción 2D',
+    'Porting to consoles - Optimizations': 'Porting a consolas - Optimización',
+    'Developer': 'Desarrollador',
+    'AR App': 'Aplicación de realidad aumentada',
+    'Web Games': 'Juegos web',
+    'Video Game Development Professor': 'Profesor de desarrollo de videojuegos',
+    '2025 - Present': '2025 - Actualidad',
+    'Modular software development for PC and mobile': 'Desarrollo de software modular para PC y móvil',
+    'Freelance Web Application': 'Aplicación web freelance',
+    'Web Application Developer': 'Desarrollador de aplicaciones web',
+    'Freelance Software Project · July 2022': 'Proyecto de software freelance · Julio de 2022',
+    'Software Developer': 'Desarrollador de software',
+    'Freelance Android Application & Backend': 'Aplicación Android y backend freelance',
+    'Teaching': 'Docencia',
+    'Unity': 'Unity',
+    'Leadership': 'Liderazgo',
+    'Code Review': 'Revisión de código',
+    'Porting': 'Porting',
+    'Mobile': 'Móvil',
+    'Web Application': 'Aplicación web',
+    'Responsive UI': 'Interfaz responsive',
+    'Authentication': 'Autenticación',
+    'Role-based Access': 'Acceso por roles',
+    'Data History': 'Historial de datos',
+    'CSV Export': 'Exportación CSV',
+    'Desktop Applications': 'Aplicaciones de escritorio',
+    'QR Codes': 'Códigos QR',
+    'Cloud Backup': 'Respaldo en la nube',
+    'Offline Sync': 'Sincronización offline',
+    'Data Encryption': 'Cifrado de datos',
+    'Logistics': 'Logística',
+    'Virtual Environments': 'Entornos virtuales',
+    'Game Development': 'Desarrollo de videojuegos',
+    'Technical Skills': 'Habilidades técnicas',
+    'Desktop modules': 'Módulos de escritorio',
+    'Android modules': 'Módulos Android',
+    'Courses: Programming in Virtual Environments I and II': 'Asignaturas: Programación en Entornos Virtuales I y II',
+    'Technologies: Unity and C#': 'Tecnologías: Unity y C#',
+    'Degree: University Technician in Video Game Development and Production': 'Carrera: Tecnicatura Universitaria en Desarrollo y Producción de Videojuegos',
+    'Course: Programming in C# and Unity': 'Asignatura: Programación en C# y Unity',
+    'Program: Introduction to Video Game Development': 'Programa: Introducción al desarrollo de videojuegos',
+    '2025 - 2026': '2025 - 2026'
+  };
+
+  Object.assign(staticSpanishText, {
+    'I led the development team on the project, ensuring code quality and promoting a maintainable architecture through code reviews and the adoption of development best practices.': 'Lideré el equipo de desarrollo del proyecto, asegurando la calidad del código y promoviendo una arquitectura mantenible mediante revisiones de código y buenas prácticas de desarrollo.',
+    'Led the Unity development team': 'Lideré el equipo de desarrollo en Unity',
+    'Performed code reviews and mentored other developers': 'Realicé revisiones de código y acompañé a otros desarrolladores',
+    'Improved code maintainability, scalability, and performance': 'Mejoré la mantenibilidad, escalabilidad y rendimiento del código',
+    'Implemented gameplay systems and core mechanics': 'Implementé sistemas de gameplay y mecánicas principales',
+    'A massively multiplayer online role-playing game for mobile devices. I was part of the core development team, responsible for building and maintaining key gameplay systems within a continuous QA-driven production environment. One of the main technical challenges involved server-side optimization and client authority management in a large-scale multiplayer architecture.': 'Videojuego de rol multijugador masivo para dispositivos móviles. Formé parte del equipo principal de desarrollo, construyendo y manteniendo sistemas clave de gameplay en un entorno de producción guiado por QA. Uno de los principales desafíos técnicos fue la optimización del servidor y la gestión de autoridad del cliente en una arquitectura multijugador de gran escala.',
+    'Development of core gameplay systems including: Inventory, Weapons, Tutorials, UI': 'Desarrollo de sistemas principales de gameplay, incluyendo inventario, armas, tutoriales e interfaz',
+    'Implementation of multiplayer using Mirror Networking for massive concurrency players': 'Implementación del multijugador utilizando Mirror Networking para una gran cantidad de jugadores concurrentes',
+    'Audio integration using FMOD': 'Integración de audio utilizando FMOD',
+    'Development of internal web tools in Python for AWS server management': 'Desarrollo de herramientas web internas en Python para la gestión de servidores AWS',
+    'Backend integration using Unity Gaming Services (UGS)': 'Integración de backend utilizando Unity Gaming Services (UGS)',
+    'I joined the project during its final production stages to adapt the game for consoles, including PlayStation 5, Xbox Series, and Nintendo Switch. My primary technical challenges involved input system adaptation and memory optimization for Nintendo Switch hardware. As the title has not yet been released, I also supported general gameplay improvements and performance optimization.': 'Me incorporé al proyecto durante sus etapas finales de producción para adaptar el juego a consolas, incluyendo PlayStation 5, Xbox Series y Nintendo Switch. Mis principales desafíos técnicos fueron la adaptación del sistema de entrada y la optimización de memoria para el hardware de Nintendo Switch. Como el título aún no fue lanzado, también colaboré con mejoras generales de gameplay y optimización de rendimiento.',
+    'Port Unity project to XBOX, Playstation, Nintendo Switch, Steam and WinStore': 'Porting del proyecto de Unity a Xbox, PlayStation, Nintendo Switch, Steam y WinStore',
+    'Platform-specific systems (save system, input system, trophies/achievements, DLC)': 'Sistemas específicos por plataforma: guardado, entrada, trofeos/logros y DLC',
+    'Performance and memory optimization for console hardware': 'Optimización de rendimiento y memoria para hardware de consolas',
+    'SDK integration and certification compliance': 'Integración de SDK y cumplimiento de certificaciones',
+    'Platform-specific bug fixing and technical adjustments': 'Corrección de errores y ajustes técnicos específicos por plataforma',
+    'Additional details available under non-disclosure agreement.': 'Detalles adicionales disponibles bajo acuerdo de confidencialidad.',
+    'An augmented reality application for Android and iOS designed to visualize a life-sized 3D model of a vending machine in real-world environments, allowing users to simulate spatial placement before installation. This project marked my first professional experience working with 3D content and AR technologies.': 'Aplicación de realidad aumentada para Android e iOS, diseñada para visualizar un modelo 3D a escala real de una máquina expendedora en entornos reales y simular su ubicación antes de la instalación. Este proyecto fue mi primera experiencia profesional trabajando con contenido 3D y tecnologías AR.',
+    'Implementation of AR system using Vuforia': 'Implementación de un sistema AR utilizando Vuforia',
+    'Integration of 3D models': 'Integración de modelos 3D',
+    'User Interface development': 'Desarrollo de interfaz de usuario',
+    'Implementation of a video player to demonstrate product usage': 'Implementación de un reproductor de video para demostrar el uso del producto',
+    'One of my first professional experiences in game development. I developed a series of web-based minigames featuring online leaderboards as part of the Game Disease NFT ecosystem.': 'Una de mis primeras experiencias profesionales en desarrollo de videojuegos. Desarrollé una serie de minijuegos web con tablas de posiciones online como parte del ecosistema NFT de Game Disease.',
+    'Rapid prototyping followed by full production development': 'Prototipado rápido seguido del desarrollo completo para producción',
+    'Online leaderboard integration using Firebase': 'Integración de tablas de posiciones online utilizando Firebase',
+    'Audio integration (sfx & music)': 'Integración de audio (efectos y música)',
+    'A web application that generates credit-loading keys for coffee vending machines and keeps a searchable history of every generation.': 'Aplicación web que genera claves de carga de crédito para máquinas expendedoras de café y conserva un historial consultable de cada generación.',
+    'Login with user roles': 'Inicio de sesión con roles',
+    'Code generation to enable machine recharging': 'Generación de códigos para habilitar la recarga de las máquinas',
+    'Searchable history with filters by machine and date range': 'Historial consultable con filtros por equipo y rango de fechas',
+    'Backup and CSV export of generation records': 'Respaldo y exportación CSV de los registros de generación',
+    'Administration tools for creating users, changing passwords and activating accounts': 'Herramientas de administración para crear usuarios, cambiar contraseñas y activar cuentas',
+    'A modular software system developed to track truck movements between quarries and construction sites, as well as fuel distribution across fixed and mobile stations.': 'Sistema de software modular desarrollado para registrar el movimiento de camiones entre canteras y obradores, además del despacho de combustible en estaciones fijas y móviles.',
+    'The solution combined desktop applications for different control points with Android applications used during material reception and mobile fuel delivery.': 'La solución combinó aplicaciones de escritorio para distintos puntos de control con aplicaciones Android utilizadas durante la recepción de materiales y el despacho móvil de combustible.',
+    'Vehicle registration with carrier, driver, truck and load capacity information.': 'Alta de vehículos con información del transportista, conductor, camión y capacidad de carga.',
+    'Departure registration with QR scanning.': 'Registro de salida con lectura QR.',
+    'Weighing station registration with gross and net weight data.': 'Registro en balanza con datos de peso bruto y peso neto.',
+    'Fixed-station fuel dispatch with printed tickets and QR-coded records.': 'Despacho de combustible en estación fija con tickets impresos y registros codificados en QR.',
+    'Record search with filters and CSV export.': 'Búsqueda de registros con filtros y exportación CSV.',
+    'User and password management.': 'Gestión de usuarios y contraseñas.',
+    'Receiving registration at the quarry or weighing station using QR scanning and GPS location.': 'Registro de recepción en cantera o balanza mediante lectura QR y ubicación GPS.',
+    'Mobile-station fuel dispatch registration with cloud backup.': 'Registro de despacho de combustible en estación móvil con respaldo en la nube.',
+    'Offline mode with synchronization of pending records after reconnecting.': 'Modo offline con sincronización de registros pendientes al recuperar la conexión.',
+    'An Android application designed to register and manage fuel consumption and maintenance work performed on vehicles and machinery.': 'Aplicación Android diseñada para registrar y gestionar el consumo de combustible y los trabajos de mantenimiento realizados en vehículos y maquinaria.',
+    'The system combines a mobile application with a cloud-based backend, database tables and PHP scripts for managing the recorded information.': 'El sistema combina una aplicación móvil con un backend en la nube, tablas de base de datos y scripts PHP para gestionar la información registrada.',
+    'Authentication with user access control': 'Autenticación con control de acceso de usuarios',
+    'GPS location capture to validate where each record was created': 'Captura de ubicación GPS para validar dónde se creó cada registro',
+    'QR code scanning to identify vehicles and machinery': 'Lectura de códigos QR para identificar vehículos y maquinaria',
+    'MySQL database structure and data management scripts': 'Estructura de base de datos MySQL y scripts de gestión de datos',
+    'Android APK distributed for manual installation': 'APK Android distribuido para instalación manual',
+    'University teaching experience focused on video game programming, Unity and C#.': 'Experiencia docente universitaria enfocada en programación de videojuegos, Unity y C#.',
+    'I teach programming for virtual environments as part of the University Technician degree in Video Game Development and Production.': 'Dicto programación en entornos virtuales como parte de la Tecnicatura Universitaria en Desarrollo y Producción de Videojuegos.',
+    'I taught programming for video game development, combining C# and Unity with an introductory approach for students entering the field.': 'Dicté programación para desarrollo de videojuegos, combinando C# y Unity con un enfoque introductorio para estudiantes que ingresan al área.',
+    'Institution:': 'Institución:',
+    'Deployment:': 'Despliegue:',
+    'Scope:': 'Alcance:',
+    'Client:': 'Cliente:',
+    'Developer:': 'Desarrollador:',
+    'Publisher:': 'Publisher:',
+    'Platforms:': 'Plataformas:',
+    'Platforms: Android / iOS': 'Plataformas: Android / iOS',
+    'Platforms: PC (Steam & WinStore) / XBox / Playstation 5 / Switch': 'Plataformas: PC (Steam y WinStore) / Xbox / PlayStation 5 / Switch',
+    'Platforms: WebGL': 'Plataformas: WebGL',
+    'Client: ': 'Cliente: ',
+    'Developer: ': 'Desarrollador: ',
+    'Publisher: ': 'Publisher: ',
+    'Platforms: ': 'Plataformas: ',
+    'Scope: ': 'Alcance: ',
+    'Deployment: ': 'Despliegue: ',
+    'View trailer ↗': 'Ver tráiler ↗',
+    'Steam Store Page ↗': 'Página de Steam ↗',
+    'Play here: 🎮': 'Jugar aquí: 🎮',
+    'Degree program ↗': 'Plan de estudios ↗',
+    'Back to top ↑': 'Volver arriba ↑',
+    'Game & Software Developer': 'Desarrollador de videojuegos y software'
+  });
+
+  function applyStaticLanguage(language) {
+    const staticTextNodes = document.querySelectorAll('.portfolio-panel h1, .portfolio-panel h2, .portfolio-panel h3, .portfolio-panel h5, .portfolio-panel p, .portfolio-panel li, .portfolio-panel .badge, .game-project-summary h2, .game-project-summary h3, .game-project-summary p, .footer-right a, .footer-bottom span');
+    staticTextNodes.forEach((element) => {
+      if (element.hasAttribute('data-i18n')) return;
+      if (!element.dataset.originalText) element.dataset.originalText = element.textContent;
+      const key = element.dataset.originalText.replace(/\s+/g, ' ').trim();
+      if (language === 'es' && staticSpanishText[key]) {
+        element.textContent = staticSpanishText[key];
+      } else if (language === 'en') {
+        element.textContent = element.dataset.originalText;
+      }
+    });
+
+    const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+    while (textWalker.nextNode()) textNodes.push(textWalker.currentNode);
+    textNodes.forEach((node) => {
+      const parent = node.parentElement;
+      if (!parent || parent.closest('script, style, [data-i18n]')) return;
+      if (!node.originalText) node.originalText = node.nodeValue;
+      const key = node.originalText.replace(/\s+/g, ' ').trim();
+      if (language === 'es' && staticSpanishText[key]) {
+        node.nodeValue = node.originalText.replace(key, staticSpanishText[key]);
+      } else if (language === 'en') {
+        node.nodeValue = node.originalText;
+      }
+    });
+  }
+
+  const accordionProjects = document.querySelectorAll('.games-panel .project');
+
+  accordionProjects.forEach((project) => {
+    const projectText = project.querySelector('.project-text');
+    const projectMedia = project.querySelector('.project-media');
+    const projectName = projectText.querySelector('h1')?.textContent.trim().toLowerCase() || '';
+
+    if (project.closest('#software-panel')) {
+      const thumbnail = projectMedia.querySelector('.software-thumbnail');
+      const expandedMedia = document.createElement('div');
+      expandedMedia.className = 'expanded-project-media';
+
+      Array.from(projectMedia.children).forEach((mediaElement) => {
+        if (mediaElement !== thumbnail) expandedMedia.appendChild(mediaElement);
+      });
+
+      if (expandedMedia.children.length > 0) projectText.appendChild(expandedMedia);
+    }
+
+    const expandedElements = [];
+
+    if (projectName.includes('skinwalker') || projectName.includes('cyborg immortal')) {
+      projectMedia.querySelectorAll('img').forEach((image) => expandedElements.push(image));
+    }
+
+    if (projectName.includes('game disease')) {
+      projectMedia.querySelectorAll('video').forEach((video, index) => {
+        if (index > 0) expandedElements.push(video);
+      });
+    }
+
+    if (expandedElements.length > 0) {
+      const expandedMedia = document.createElement('div');
+      expandedMedia.className = 'expanded-project-media';
+      expandedElements.forEach((element) => expandedMedia.appendChild(element));
+      projectText.appendChild(expandedMedia);
+    }
+
+    projectMedia.querySelectorAll('p').forEach((paragraph) => {
+      if (!paragraph.querySelector('img, video') && !paragraph.textContent.trim()) {
+        paragraph.remove();
+      } else if (paragraph.querySelector('img, video')) {
+        while (paragraph.firstChild) projectMedia.insertBefore(paragraph.firstChild, paragraph);
+        paragraph.remove();
+      }
+    });
+    const title = projectText.querySelector('h1');
+    const subtitle = projectText.querySelector('.project-subtitle');
+    const role = projectText.querySelector('h2');
+
+    const header = document.createElement('div');
+    header.className = 'game-project-header';
+    header.setAttribute('role', 'button');
+    header.setAttribute('tabindex', '0');
+    header.setAttribute('aria-expanded', 'false');
+
+    const summary = document.createElement('div');
+    summary.className = 'game-project-summary';
+
+    const summaryTitle = document.createElement('h2');
+    summaryTitle.textContent = title ? title.textContent.trim() : 'Project';
+    summary.appendChild(summaryTitle);
+
+    if (subtitle) {
+      const summarySubtitle = document.createElement('p');
+      summarySubtitle.textContent = subtitle.textContent.trim();
+      summary.appendChild(summarySubtitle);
+    }
+
+    if (role) {
+      const summaryRole = document.createElement('h3');
+      summaryRole.textContent = role.textContent.trim();
+      summary.appendChild(summaryRole);
+    }
+
+    const toggle = document.createElement('span');
+    toggle.className = 'game-project-toggle';
+    toggle.setAttribute('aria-hidden', 'true');
+    toggle.textContent = '＋';
+
+    header.append(projectMedia, summary, toggle);
+    project.prepend(header);
+    project.classList.add('game-project');
+
+    const collapseButton = document.createElement('button');
+    collapseButton.className = 'game-project-collapse';
+    collapseButton.type = 'button';
+    collapseButton.setAttribute('aria-label', 'Collapse project details');
+    collapseButton.textContent = '−';
+    collapseButton.addEventListener('click', (event) => {
+      event.stopPropagation();
+      toggleProject();
+    });
+    projectText.appendChild(collapseButton);
+
+    const toggleProject = () => {
+      const shouldOpen = !project.classList.contains('open');
+
+      accordionProjects.forEach((otherProject) => {
+        otherProject.classList.remove('open');
+        const otherHeader = otherProject.querySelector('.game-project-header');
+        const otherToggle = otherProject.querySelector('.game-project-toggle');
+        if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
+        if (otherToggle) otherToggle.textContent = '＋';
+      });
+
+      if (shouldOpen) {
+        project.classList.add('open');
+        header.setAttribute('aria-expanded', 'true');
+        toggle.textContent = '−';
+      }
+    };
+
+    header.addEventListener('click', toggleProject);
+    header.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleProject();
+      }
+    });
+  });
+
+  function selectPortfolioPanel(panelId, updateUrl = true) {
+    portfolioTabs.forEach((tab) => {
+      const isActive = tab.dataset.panel === panelId;
+      tab.classList.toggle('active', isActive);
+      tab.setAttribute('aria-selected', String(isActive));
+      const indicator = tab.querySelector('.section-button-plus');
+      if (indicator) indicator.textContent = isActive ? '−' : '+';
+    });
+
+    portfolioPanels.forEach((panel) => {
+      panel.hidden = panel.id !== panelId;
+    });
+
+    if (updateUrl) {
+      const section = panelId.replace('-panel', '');
+      history.replaceState(null, '', `#${section}`);
+
+      if (panelId !== 'home-panel') {
+        document.getElementById(panelId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }
+
+  portfolioTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const panelId = tab.classList.contains('active') ? 'home-panel' : tab.dataset.panel;
+      selectPortfolioPanel(panelId);
+    });
+  });
+
+  floatingHome.addEventListener('click', () => {
+    selectPortfolioPanel('home-panel');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  function applyLanguage(language) {
+    document.querySelectorAll('[data-i18n]').forEach((element) => {
+      const translation = translations[language][element.dataset.i18n];
+      if (translation) {
+        const richTextKeys = ['sacdeScope', 'erinlandDeployment'];
+        if (element.tagName === 'IMG') {
+          element.alt = translation;
+        } else {
+          element[richTextKeys.includes(element.dataset.i18n) ? 'innerHTML' : 'textContent'] = translation;
+        }
+      }
+    });
+
+    languageButtons.forEach((button) => {
+      button.classList.toggle('active', button.dataset.language === language);
+    });
+
+    document.documentElement.lang = language;
+    document.title = translations[language].pageTitle;
+    document.getElementById('meta-description').setAttribute('content', translations[language].metaDescription);
+
+    applyStaticLanguage(language);
+  }
+
+  languageButtons.forEach((button) => {
+    button.addEventListener('click', () => applyLanguage(button.dataset.language));
+  });
+
+  const validSections = ['home', 'games', 'software', 'teaching', 'about'];
+  const requestedSection = window.location.hash.replace('#', '');
+  const initialSection = validSections.includes(requestedSection) ? `${requestedSection}-panel` : 'home-panel';
+  selectPortfolioPanel(initialSection, false);
+  applyLanguage('en');
+
+  window.addEventListener('hashchange', () => {
+    const section = window.location.hash.replace('#', '');
+    if (validSections.includes(section)) selectPortfolioPanel(`${section}-panel`, false);
+  });
+</script>
 </body>
 </html>
